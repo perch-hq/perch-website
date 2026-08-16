@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0c0b0a;
+  --bg-raised: #141210;
+  --ink: #ece6dc;
+  --ink-muted: #9a9186;
+  --copper: #c47a4a;
+  --hairline: #2a2622;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-raised: var(--bg-raised);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-copper: var(--copper);
+  --color-hairline: var(--hairline);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+::selection {
+  background: var(--copper);
+  color: var(--bg);
+}
+
+.site {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 60rem;
+  padding-inline: 1.5rem;
+}
+
+.measure {
+  max-width: 40rem;
+}
+
+.proof-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.proof-table th,
+.proof-table td {
+  border-bottom: 1px solid var(--hairline);
+  padding: 0.9rem 1.25rem 0.9rem 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.proof-table th {
+  color: var(--ink-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.proof-table td:first-child {
+  color: var(--ink-muted);
+  width: 26%;
+}
+
+.proof-table code {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.92em;
+}
+
+.diagram-scroll {
+  overflow-x: auto;
+  margin-inline: -0.25rem;
+  padding-inline: 0.25rem;
+}
+
+.diagram-scroll svg {
+  display: block;
+  min-width: 40rem;
+  width: 100%;
+  height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
