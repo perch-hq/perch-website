@@ -2,6 +2,8 @@
 
 Perch — colocated Solana trading seats.
 
+Live: [https://poroburu.github.io/perch-website/](https://poroburu.github.io/perch-website/)
+
 ```bash
 npm run dev
 ```

@@ -19,6 +19,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
+  metadataBase: new URL("https://poroburu.github.io/perch-website"),
   openGraph: {
     title,
     description,
