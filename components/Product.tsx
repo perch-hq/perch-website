@@ -1,19 +1,19 @@
 const pillars = [
   {
     title: "You build the vault",
-    body: "You open it, you pick the strategy, you own the track record. Your own money goes in first, so there is something real to look at before anyone else decides.",
+    body: "You open it, you pick the strategy, you own the tape.",
   },
   {
     title: "Charge a fee",
-    body: "Set your rate once and your share of every fee the vault earns comes straight to you. Perch charges rent for the seat and takes nothing out of what your depositors make.",
+    body: "Set your rate. Your share of every fee comes to you.",
   },
   {
     title: "Stay private",
-    body: "Keep it invite-only and only the wallets you named can deposit. Anything else is turned away at the door. Private here is about who is in, not about hiding the strategy.",
+    body: "Invite-only if you want. Anyone else is turned away.",
   },
   {
     title: "Leave anytime",
-    body: "Walk away and everyone who deposited can still take their share out, without your signature and without ours. Nothing here can hold the money hostage.",
+    body: "Anyone who deposited can take their share out whenever they want.",
   },
 ] as const;
 
@@ -24,10 +24,6 @@ export function Product() {
       <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
         A vault one person can run.
       </h2>
-      <p className="measure mt-6 text-ink-muted">
-        Meteora is the first market we support. What you get is a vault of your
-        own, not another pool to deposit into.
-      </p>
       <div className="mt-12 grid gap-10 sm:grid-cols-2">
         {pillars.map((item, i) => (
           <article key={item.title} className="border-t border-hairline pt-6">

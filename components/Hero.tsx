@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/lib/site";
 
 export function Seat() {
@@ -91,9 +92,9 @@ export function Hero() {
             <em className="italic text-copper">Leave anytime.</em>
           </h1>
           <p className="measure mt-8 text-lg text-ink-muted">
-            The vault is yours. You set the fee, you choose who gets in, and
-            anyone can withdraw whenever they want. Perch only rents the seat
-            your trades go out from — we never hold the money.
+            Your own vault for a strategy you already run. Invite who you want,
+            keep the fee, and anyone can withdraw. We rent the seat the trades
+            leave from.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <a
@@ -102,13 +103,12 @@ export function Hero() {
             >
               Request a seat
             </a>
-            <a
-              href={site.memo}
-              rel="noreferrer"
+            <Link
+              href={site.docs}
               className="border border-hairline px-4 py-2.5 text-sm text-ink-muted transition-colors hover:border-ink hover:text-ink"
             >
-              Read the memo
-            </a>
+              Read the docs
+            </Link>
           </div>
         </div>
         <div className="flex justify-center lg:justify-end">

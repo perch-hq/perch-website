@@ -90,6 +90,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable}`}
     >
       <body className="bg-bg font-sans text-ink antialiased">

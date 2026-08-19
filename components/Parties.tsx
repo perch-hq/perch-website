@@ -2,17 +2,17 @@ const parties = [
   {
     name: "Curator",
     hold: "The vault",
-    body: "That is you. You open the vault, set the fee and decide who can join. Your own money sits in it on the same terms as everyone else’s, and you never get a login to the machine.",
+    body: "That is you. You open the vault, set the fee, and decide who can join.",
   },
   {
     name: "Depositors",
     hold: "A share each",
-    body: "They join a vault with a history they can check, and they can leave whenever they like — with or without you. What they hold is their share, not the keys.",
+    body: "They join, they hold a share, and they can leave whenever they like.",
   },
   {
     name: "Perch",
     hold: "The seat",
-    body: "We run the machine in Amsterdam or Frankfurt that your trades go out from. It can trade your vault and nothing else. We charge rent for that, not a slice of the returns.",
+    body: "We rent the seat the trades leave from. We never hold the money.",
   },
 ] as const;
 

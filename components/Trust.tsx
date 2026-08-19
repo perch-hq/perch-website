@@ -17,9 +17,9 @@ export function Trust() {
   return (
     <section id="trust" className="site scroll-mt-20 pb-20 sm:pb-28">
       <p className="eyebrow">Trust</p>
-      <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
+      <h1 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
         You never get a login. Neither does your bot.
-      </h2>
+      </h1>
       <p className="measure mt-6 text-ink-muted">
         There is no login to hand out and no key to leak — not for you, not for
         the people who deposit, not for an agent you point at the vault. The

@@ -27,14 +27,8 @@ export function Waitlist() {
         <div>
           <p className="eyebrow">Design partners</p>
           <h2 className="mt-4 font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-            Seats are scarce on purpose.
+            If you already run a strategy, ask for a seat.
           </h2>
-          <p className="measure mt-6 text-ink-muted">
-            One curator per machine, so there are only so many to give out. If
-            you already run a Meteora strategy — or an agent that is one pasted
-            key away from trouble — ask for a seat. Start with one person who
-            trusts you. Requesting a seat opens a GitHub issue.
-          </p>
         </div>
         <form
           onSubmit={onSubmit}

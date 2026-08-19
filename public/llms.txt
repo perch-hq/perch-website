@@ -5,6 +5,7 @@
 Perch lets a person open a (private) vault on Solana, take a fee from people who opt in, and lets those people leave if the curator stops. Perch rents the sealed seat under that vault. Perch never holds inventory.
 
 Site: https://perch.poroburu.com
+Docs: https://perch.poroburu.com/docs
 Memo: https://github.com/perch-hq/f26-perch/blob/main/PERCH.md
 Architecture: https://github.com/perch-hq/f26-perch/blob/main/ARCH.md
 Strategy: https://github.com/perch-hq/f26-perch/blob/main/STRATEGY.md

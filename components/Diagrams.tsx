@@ -108,9 +108,9 @@ export function SplitPlane() {
       <figure>
         <figcaption className="measure">
           <p className="eyebrow">The seat</p>
-          <h2 className="mt-4 font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
+          <h1 className="mt-4 font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
             Your strategy can live anywhere. Trades cannot.
-          </h2>
+          </h1>
           <p className="mt-6 text-ink-muted">
             Think from anywhere — a laptop, a server, an agent on a schedule.
             The signing happens on the perch, so the keys are never on your

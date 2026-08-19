@@ -29,9 +29,9 @@ export function HowItWorks() {
   return (
     <section id="how" className="site scroll-mt-20 pb-20 sm:pb-28">
       <p className="eyebrow">How it works</p>
-      <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
+      <h1 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
         Open, fund, invite, trade, freeze, leave.
-      </h2>
+      </h1>
       <ol className="mt-12 grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
         {steps.map((step, i) => (
           <li
