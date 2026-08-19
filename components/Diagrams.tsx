@@ -106,10 +106,15 @@ export function SplitPlane() {
   return (
     <section className="site pb-20 sm:pb-28">
       <figure>
-        <figcaption className="measure text-[1.125rem] leading-relaxed">
-          They run Condor anywhere, or subscribe to our instance and the LLM
-          upsell. We host hummingbot-api on the Act box. The model never sits
-          on colo, and trading keys never sit on the cheap plane.
+        <figcaption className="measure">
+          <p className="eyebrow">The seat</p>
+          <h2 className="mt-4 font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
+            The brain can live anywhere. The hands cannot.
+          </h2>
+          <p className="mt-6 text-ink-muted">
+            You think remote. Ticks sign only from the perch. The model never
+            sits on colo, and trading keys never sit on the cheap plane.
+          </p>
         </figcaption>
         <div className="diagram-scroll mt-10">
           <svg
@@ -118,13 +123,14 @@ export function SplitPlane() {
             aria-labelledby="split-title split-desc"
             fontFamily="inherit"
           >
-            <title id="split-title">Split plane: think anywhere, sign from colo</title>
+            <title id="split-title">
+              Split plane: think anywhere, sign from colo
+            </title>
             <desc id="split-desc">
-              Condor and the LLM run anywhere without trading keys, connected
-              by Tailscale to hummingbot-api only. On the Amsterdam or Frankfurt
-              seat, hummingbot-api talks to a Gateway-shaped shim whose crank
-              signs vault.act, then Jet sends to the leader TPU. Keys never
-              leave that side.
+              Curator, LPs, and the model run anywhere without trading keys,
+              connected by API only. On the Amsterdam or Frankfurt seat,
+              hummingbot-api talks to a shim that signs vault ticks, then sends
+              to the leader. Keys never leave that side.
             </desc>
             <Panel x={0} y={28} w={400} h={292} />
             <Label x={20} y={52}>
@@ -135,16 +141,16 @@ export function SplitPlane() {
               y={72}
               w={360}
               h={56}
-              title="Condor"
-              sub="Orient and decide"
+              title="Curator · LPs"
+              sub="Wallets sign joins, freeze, withdraw"
             />
             <Node
               x={20}
               y={140}
               w={360}
               h={56}
-              title="LLM"
-              sub="Credits upsell · no Act keys"
+              title="Agent / LLM"
+              sub="Orient and decide · no Act keys"
             />
             <Node
               x={20}
@@ -171,7 +177,7 @@ export function SplitPlane() {
               fontSize={11}
               textAnchor="middle"
             >
-              Tailscale · API only
+              API only
             </text>
 
             <Panel x={480} y={28} w={400} h={292} accent />
@@ -199,8 +205,8 @@ export function SplitPlane() {
               y={148}
               w={360}
               h={56}
-              title="Shim"
-              sub="Crank signs vault.act"
+              title="Sealed shim"
+              sub="Signs the vault tick"
               accent
             />
             <line
@@ -216,7 +222,7 @@ export function SplitPlane() {
               y={224}
               w={360}
               h={64}
-              title="Jet → leader TPU"
+              title="Leader TPU"
               sub="Keys never leave this side"
             />
           </svg>
@@ -230,10 +236,15 @@ export function VaultCustody() {
   return (
     <section className="site pb-20 sm:pb-28">
       <figure>
-        <figcaption className="measure text-[1.125rem] leading-relaxed">
-          Solana programs protect the client. The vault PDA owns the tokens and
-          the Meteora position. Stock gateway connect is out of scope: that key
-          would own the LP.
+        <figcaption className="measure">
+          <p className="eyebrow">Custody</p>
+          <h2 className="mt-4 font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
+            The vault owns the position. The seat only ticks it.
+          </h2>
+          <p className="mt-6 text-ink-muted">
+            Pasting a key into a gateway would make us the owner. That path is
+            out of scope. Withdraw works with the seat frozen.
+          </p>
         </figcaption>
         <div className="diagram-scroll mt-10">
           <svg
@@ -243,15 +254,13 @@ export function VaultCustody() {
             fontFamily="inherit"
           >
             <title id="vault-title">
-              Three objects: lease bond, crank, inventory
+              Three objects: lease bond, seat signer, inventory
             </title>
             <desc id="vault-desc">
-              The customer is vault authority and never puts that key on the
-              box. The vault PDA owns the token accounts and the Meteora
-              position. The crank signs vault.act only while the lease is live
-              and unfrozen, and may CPI into four allowlisted CLMM instructions.
-              Jupiter is rejected. Owner withdraw returns inventory with the
-              crank offline.
+              The curator never puts a key on the box. The vault program owns
+              the token accounts and the Meteora position. The seat signs ticks
+              only while the lease is live and unfrozen. Each LP withdraws
+              without the curator.
             </desc>
 
             <Node
@@ -259,8 +268,8 @@ export function VaultCustody() {
               y={8}
               w={250}
               h={72}
-              title="Customer authority"
-              sub="Never on the box"
+              title="Curator"
+              sub="Opens the vault · never on the box"
             />
             <Node
               x={315}
@@ -268,15 +277,15 @@ export function VaultCustody() {
               w={250}
               h={72}
               title="Lease · USDC bond"
-              sub="Freeze stops act"
+              sub="Freeze stops ticks"
             />
             <Node
               x={630}
               y={8}
               w={250}
               h={72}
-              title="Crank"
-              sub="Foothold · no Token approve"
+              title="Seat signer"
+              sub="Foothold · cannot transfer"
               accent
             />
 
@@ -305,13 +314,13 @@ export function VaultCustody() {
               strokeWidth={1.5}
             />
             <text x={133} y={118} fill={muted} fontSize={11}>
-              fund · freeze · withdraw
+              open · freeze
             </text>
             <text x={448} y={118} fill={muted} fontSize={11}>
               lease must be live
             </text>
             <text x={628} y={118} fill={muted} fontSize={11}>
-              signs vault.act
+              signs the tick
             </text>
 
             <rect
@@ -324,13 +333,14 @@ export function VaultCustody() {
               strokeWidth={2}
             />
             <text x={220} y={180} fill={ink} fontSize={16} fontWeight={500}>
-              Vault PDA
+              Vault program
             </text>
             <text x={220} y={204} fill={muted} fontSize={12}>
-              Owns ATAs and PositionV2. Owner is the PDA, not the crank.
+              Owns tokens and the position. LPs hold deposits, not a share
+              mint.
             </text>
             <text x={220} y={224} fill={muted} fontSize={12}>
-              withdraw works with the crank offline.
+              Withdraw works with the curator gone.
             </text>
 
             <line
@@ -342,13 +352,8 @@ export function VaultCustody() {
               strokeWidth={1.5}
             />
             <polygon points="435,280 440,292 445,280" fill={copper} />
-            <text
-              x={448}
-              y={272}
-              fill={muted}
-              fontSize={11}
-            >
-              CPI allowlist · Jupiter rejected
+            <text x={448} y={272} fill={muted} fontSize={11}>
+              Named venue only · fee skims to you
             </text>
 
             <Node
@@ -356,8 +361,8 @@ export function VaultCustody() {
               y={300}
               w={600}
               h={80}
-              title="Meteora CLMM"
-              sub="add_liquidity2 · remove_liquidity2 · rebalance_liquidity · claim_fee2"
+              title="Meteora DLMM"
+              sub="First venue adapter · not the company"
               accent
             />
           </svg>

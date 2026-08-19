@@ -1,0 +1,38 @@
+# Perch
+
+> Build a vault. Charge a fee. Stay private. Leave anytime.
+
+Perch lets a person open a (private) vault on Solana, take a fee from people who opt in, and lets those people leave if the curator stops. Perch rents the sealed seat under that vault. Perch never holds inventory.
+
+Site: https://perch.poroburu.com
+Memo: https://github.com/perch-hq/f26-perch/blob/main/PERCH.md
+Architecture: https://github.com/perch-hq/f26-perch/blob/main/ARCH.md
+Strategy: https://github.com/perch-hq/f26-perch/blob/main/STRATEGY.md
+
+## Product
+
+- Curator opens a vault, sets an immutable fee, optional private allowlist.
+- Curator's own capital ticks first so a tape exists. LPs opt in after that.
+- Claimed venue fees skim to the curator. Perch takes seat rent, not LP yield.
+- First venue is Meteora DLMM. Meteora is an adapter, not the company.
+- Sealed seat in Amsterdam or Frankfurt. Tenant never gets a login.
+- Freeze stops the next tick on-chain. Each LP withdraws without the curator.
+
+## Not this
+
+- Not a Kamino. Perch is not the pooled manager.
+- Not a managed VPS with SSH and a Stripe hold.
+- Not Jump-competitive HFT. Not a SWQoS marketplace.
+- Not a fund. Opt-in capital is the curator's job.
+
+## Agent tools (this sprint)
+
+Discover this file. Drive the cheap-plane API; never hold the crank or an owner key.
+
+- `open_lease` / `open_vault` / `allow_lp` — curator wallet signs
+- `join` / `fund` / `withdraw` — LP wallet signs
+- `start_lp_rebalancer` / `patch_rebalancer` — packaged controller only
+- `freeze` — curator or operator, not LP
+- `lease_status` / `landing_receipts` — read-only
+
+Refuse: paste private key, SSH, upload controller `.py`, swaps, slash, live fee changes.
