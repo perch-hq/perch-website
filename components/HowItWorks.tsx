@@ -13,7 +13,7 @@ const steps = [
   },
   {
     title: "Trades leave from the seat",
-    body: "Run your strategy wherever you like — laptop, cloud, an agent. The orders themselves go out from a machine in Amsterdam or Frankfurt, close to where they land.",
+    body: "Run Condor — or another agent — wherever you like. hummingbot-api on the perch is what actually sends. You never log into that machine.",
   },
   {
     title: "Freeze stops the trading",

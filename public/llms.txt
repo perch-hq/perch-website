@@ -1,17 +1,19 @@
 # Perch
 
-> Build a vault. Charge a fee. Stay private. Leave anytime.
+> Deploy a Hummingbot strategy. Or join a vault that already ticks.
 
-Perch lets a person open a (private) vault on Solana, take a fee from people who opt in, and lets those people leave if the curator stops. Perch rents the sealed seat under that vault. Perch never holds inventory.
+Perch lets a person open a (private) vault on Solana, take a fee from people who opt in, and lets those people leave if the curator stops. Condor stays on the cheap plane. hummingbot-api sits on a sealed seat. Perch never holds inventory.
 
 Site: https://perch.poroburu.com
 Docs: https://perch.poroburu.com/docs
+Demo tape: https://perch.poroburu.com/tape
 Memo: https://github.com/perch-hq/f26-perch/blob/main/PERCH.md
 Architecture: https://github.com/perch-hq/f26-perch/blob/main/ARCH.md
 Strategy: https://github.com/perch-hq/f26-perch/blob/main/STRATEGY.md
 
 ## Product
 
+- Two doors: deploy Condor / hummingbot-api, or join a named curator’s tape.
 - Curator opens a vault, sets an immutable fee, optional private allowlist.
 - Curator's own capital ticks first so a tape exists. LPs opt in after that.
 - Claimed venue fees skim to the curator. Perch takes seat rent, not LP yield.
@@ -21,8 +23,8 @@ Strategy: https://github.com/perch-hq/f26-perch/blob/main/STRATEGY.md
 
 ## Not this
 
-- Not a Kamino. Perch is not the pooled manager.
-- Not a managed VPS with SSH and a Stripe hold.
+- Not a Kamino. Perch is not the pooled manager. No APY/TVL catalog.
+- Not a managed VPS with SSH and a Stripe hold. Not “hosted Condor.”
 - Not Jump-competitive HFT. Not a SWQoS marketplace.
 - Not a fund. Opt-in capital is the curator's job.
 

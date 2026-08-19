@@ -6,7 +6,7 @@ import { Header } from "@/components/Header";
 export const metadata: Metadata = {
   title: "Docs",
   description:
-    "How a Perch vault works: who it is for, how people join and leave, and how the seat relates to the money.",
+    "Two doors: deploy Condor against hummingbot-api on a sealed seat, or join a named curator’s tape. How people join and leave, and how the seat relates to the money.",
 };
 
 export default function DocsLayout({ children }: LayoutProps<"/docs">) {

@@ -3,7 +3,7 @@ export const docsNav = [
     href: "/docs",
     label: "Overview",
     title: "What Perch is",
-    summary: "A vault you run. A fee you keep. A seat we rent.",
+    summary: "Two doors, one vault. Condor on your machine. hummingbot-api on the seat.",
   },
   {
     href: "/docs/how-it-works",
@@ -21,7 +21,7 @@ export const docsNav = [
     href: "/docs/seat",
     label: "The seat",
     title: "Think anywhere. Trades cannot.",
-    summary: "Your strategy can live on a laptop. Signing happens on the perch.",
+    summary: "Condor stays cheap. hummingbot-api on the perch is what sends.",
   },
   {
     href: "/docs/compare",

@@ -7,7 +7,7 @@ const links = [
   { href: site.docs, label: "Docs" },
 ] as const;
 
-export function Header({ current }: { current?: "docs" }) {
+export function Header({ current }: { current?: "docs" | "tape" }) {
   return (
     <header className="sticky top-0 z-40 border-b border-hairline/80 bg-bg/80 backdrop-blur-md">
       <div className="site flex h-14 items-center justify-between gap-6">

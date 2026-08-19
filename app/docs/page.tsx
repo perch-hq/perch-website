@@ -15,12 +15,12 @@ export default function DocsHome() {
     <div className="site pb-20 sm:pb-28">
       <p className="eyebrow">Documentation</p>
       <h1 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-        A vault you run. A fee you keep. A seat we rent.
+        Two doors. One vault. A seat we rent.
       </h1>
       <p className="measure mt-6 text-ink-muted">
-        Perch is for someone who already runs a strategy and wants a vault of
-        their own: invite who you want, charge a fee, and let people leave.
-        We rent the seat the trades leave from. We never hold the money.
+        Deploy Condor — or another agent — against hummingbot-api on a sealed
+        seat, or join a named curator’s tape. Both doors share the same vault.
+        We never hold the money.
       </p>
       <ul className="mt-12 grid gap-10 sm:grid-cols-2">
         {pages.map((page) => (
@@ -50,7 +50,11 @@ export default function DocsHome() {
         <a className="text-ink hover:text-copper" href={site.strategy} rel="noreferrer">
           strategy
         </a>{" "}
-        notes. Agents start at{" "}
+        notes. LPs join a{" "}
+        <Link href={site.tape} className="text-ink hover:text-copper">
+          named tape
+        </Link>
+        , not a ranked catalog. Agents start at{" "}
         <a className="text-ink hover:text-copper" href="/llms.txt">
           llms.txt
         </a>

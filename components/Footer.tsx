@@ -15,6 +15,9 @@ export function Footer({ memos = false }: { memos?: boolean }) {
             aria-label="Footer"
             className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted"
           >
+            <Link className="hover:text-ink" href={site.tape}>
+              Demo tape
+            </Link>
             <Link className="hover:text-ink" href={site.docs}>
               Docs
             </Link>

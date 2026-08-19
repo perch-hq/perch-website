@@ -1,19 +1,14 @@
-const pillars = [
+import Link from "next/link";
+import { site } from "@/lib/site";
+
+const jobs = [
   {
-    title: "You build the vault",
-    body: "You open it, you pick the strategy, you own the tape.",
+    title: "You run the strategy",
+    body: "Point Condor or another agent at hummingbot-api on the perch. Packaged rebalance this sprint — you do not upload code onto the box. Set your fee once. Keep it private if you want.",
   },
   {
-    title: "Charge a fee",
-    body: "Set your rate. Your share of every fee comes to you.",
-  },
-  {
-    title: "Stay private",
-    body: "Invite-only if you want. Anyone else is turned away.",
-  },
-  {
-    title: "Leave anytime",
-    body: "Anyone who deposited can take their share out whenever they want.",
+    title: "They join that tape",
+    body: "People opt into a vault you already funded. They judge the on-chain ticks, not a Perch APY. Anyone who deposited can leave without you.",
   },
 ] as const;
 
@@ -22,10 +17,10 @@ export function Product() {
     <section id="product" className="site scroll-mt-20 pb-20 sm:pb-28">
       <p className="eyebrow">The product</p>
       <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-        A vault one person can run.
+        Two jobs. One vault. We only rent the seat.
       </h2>
       <div className="mt-12 grid gap-10 sm:grid-cols-2">
-        {pillars.map((item, i) => (
+        {jobs.map((item, i) => (
           <article key={item.title} className="border-t border-hairline pt-6">
             <p className="font-mono text-xs tracking-widest text-copper">
               {String(i + 1).padStart(2, "0")}
@@ -35,6 +30,13 @@ export function Product() {
           </article>
         ))}
       </div>
+      <p className="mt-10 text-sm text-ink-muted">
+        See a named tape, not a ranked list.{" "}
+        <Link href={site.tape} className="text-ink hover:text-copper">
+          Demo tape
+        </Link>
+        .
+      </p>
     </section>
   );
 }
