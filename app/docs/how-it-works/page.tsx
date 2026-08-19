@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { HowItWorks } from "@/components/HowItWorks";
+import { Lifecycle } from "@/components/Lifecycle";
 
 export const metadata: Metadata = {
-  title: "How it works",
+  title: "Lifecycle",
   description:
-    "Open a vault, fund it first, invite people, send from hummingbot-api on the seat, freeze if you need to, and let anyone leave.",
+    "open_lease, open_vault, start_lp_rebalancer, live-updatable fields only, freeze, withdraw. Packaged lp_rebalancer this sprint.",
 };
 
 export default function HowItWorksDoc() {
-  return <HowItWorks />;
+  return <Lifecycle />;
 }

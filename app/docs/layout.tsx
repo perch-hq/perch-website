@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { DocsNav } from "@/components/DocsNav";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Docs",
   description:
-    "Two doors: deploy Condor against hummingbot-api on a sealed seat, or join a named curator’s tape. How people join and leave, and how the seat relates to the money.",
+    "Sealed Act plane: hummingbot-api plus a Gateway-shaped shim, vault.act, Deposit PDAs, packaged lp_rebalancer, and a receipt stack.",
+  alternates: { canonical: `${site.url}${site.docs}` },
 };
 
 export default function DocsLayout({ children }: LayoutProps<"/docs">) {

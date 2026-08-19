@@ -1,25 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 
-const doors = [
-  {
-    k: "01",
-    title: "Deploy Hummingbot strategies",
-    body: "Condor — or another agent — keeps thinking where it is. hummingbot-api on a sealed seat is what actually sends. You open the vault. You keep the fee.",
-    href: "/?role=curator#waitlist",
-    cta: "Request a seat",
-    primary: true,
-  },
-  {
-    k: "02",
-    title: "Join a vault",
-    body: "Opt into a named curator’s tape. You hold a share. You can leave without them, and without us. This is not a yield catalog.",
-    href: site.tape,
-    cta: "Read the demo tape",
-    primary: false,
-  },
-] as const;
-
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
@@ -30,45 +11,37 @@ export function Hero() {
       <div className="site py-16 sm:py-24 lg:py-28">
         <p className="eyebrow">Colosseum Fall 2026</p>
         <h1 className="mt-6 max-w-4xl font-serif text-[2.45rem] leading-[1.12] tracking-tight sm:text-6xl sm:leading-[1.08] lg:text-[4rem]">
-          Deploy a strategy.
+          Deploy a Hummingbot strategy.
           <br />
-          Or join a vault that{" "}
-          <em className="italic text-copper">already ticks.</em>
+          We run the hands. You never{" "}
+          <em className="italic text-copper">log in.</em>
         </h1>
         <p className="measure mt-8 text-lg text-ink-muted">
-          Condor stays on your machine. hummingbot-api sends from a sealed seat
-          in Amsterdam or Frankfurt. We rent that seat. We never hold the
-          money.
+          Condor — or another agent — keeps thinking where it is. hummingbot-api
+          sends from Amsterdam or Frankfurt. You do not paste a Gateway key.
         </p>
-        <div className="mt-14 grid gap-px bg-hairline lg:grid-cols-2">
-          {doors.map((door) => (
-            <article key={door.k} className="bg-bg p-8 sm:p-10">
-              <p className="font-mono text-xs tracking-widest text-copper">
-                {door.k}
-              </p>
-              <h2 className="mt-4 font-serif text-3xl leading-snug">
-                {door.title}
-              </h2>
-              <p className="mt-4 text-[0.95rem] text-ink-muted">{door.body}</p>
-              <Link
-                href={door.href}
-                className={
-                  door.primary
-                    ? "mt-8 inline-block border border-copper bg-copper px-4 py-2.5 text-sm text-bg transition-colors hover:bg-transparent hover:text-copper"
-                    : "mt-8 inline-block border border-hairline px-4 py-2.5 text-sm text-ink-muted transition-colors hover:border-ink hover:text-ink"
-                }
-              >
-                {door.cta}
-              </Link>
-            </article>
-          ))}
+        <div className="mt-10 flex flex-wrap items-center gap-4">
+          <Link
+            href="/#waitlist"
+            className="inline-block border border-copper bg-copper px-4 py-2.5 text-sm text-bg transition-colors hover:bg-transparent hover:text-copper"
+          >
+            Request a seat
+          </Link>
+          <Link
+            href={site.docs}
+            className="inline-block text-sm text-ink-muted transition-colors hover:text-ink"
+          >
+            Read the docs
+          </Link>
         </div>
-        <Link
-          href={site.docs}
-          className="mt-8 inline-block text-sm text-ink-muted transition-colors hover:text-ink"
-        >
-          Read the docs
-        </Link>
+        <p className="measure mt-10 text-sm text-ink-muted">
+          After your own book ticks, people can opt in. You keep the fee. They
+          leave without you. That is{" "}
+          <Link href={site.tape} className="text-ink hover:text-copper">
+            what a tape looks like
+          </Link>
+          — not a second product.
+        </p>
       </div>
     </section>
   );

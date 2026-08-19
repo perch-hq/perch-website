@@ -1,27 +1,19 @@
 const steps = [
   {
-    title: "Open a vault",
-    body: "Rent a seat, choose the pool you want to trade, and set your fee. You set that rate once, so nobody gets repriced after they join.",
+    title: "Point Condor at the perch",
+    body: "Keep thinking where you already think. hummingbot-api on the seat is what actually sends. You never log into that machine.",
   },
   {
-    title: "Fund it first",
-    body: "Your own money goes in before anyone else’s. By the time you invite people, there is a real on-chain history to judge you on instead of a pitch.",
+    title: "Your own deposit ticks",
+    body: "Open a vault, name the pool, and fund it yourself first. User one is a person whose own money is in range — not a raise.",
   },
   {
-    title: "Invite people in",
-    body: "Invite by wallet and keep it private, or leave it open to anyone. Either way the people who join get a share, not the keys.",
+    title: "Colo lands; wifi does not",
+    body: "The same rebalance from Amsterdam or Frankfurt makes the slot. A Toronto laptop often does not. That gap is the product.",
   },
   {
-    title: "Trades leave from the seat",
-    body: "Run Condor — or another agent — wherever you like. hummingbot-api on the perch is what actually sends. You never log into that machine.",
-  },
-  {
-    title: "Freeze stops the trading",
-    body: "One transaction and the next trade fails. No support ticket, no waiting on us, and no effect on anyone’s money.",
-  },
-  {
-    title: "Anyone can leave",
-    body: "Frozen seat, curator long gone: everyone can still withdraw their own share. Getting out never depends on us.",
+    title: "Freeze, then leave without us",
+    body: "One transaction and the next trade fails. If the seat is gone, you still withdraw. Getting out never depends on a login.",
   },
 ] as const;
 
@@ -29,15 +21,12 @@ export function HowItWorks() {
   return (
     <section id="how" className="site scroll-mt-20 pb-20 sm:pb-28">
       <p className="eyebrow">How it works</p>
-      <h1 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-        Open, fund, invite, trade, freeze, leave.
-      </h1>
-      <ol className="mt-12 grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
+      <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
+        Point, tick, land, leave.
+      </h2>
+      <ol className="mt-12 grid gap-0 sm:grid-cols-2">
         {steps.map((step, i) => (
-          <li
-            key={step.title}
-            className="border-t border-hairline py-8 pr-8 sm:border-hairline"
-          >
+          <li key={step.title} className="border-t border-hairline py-8 pr-8">
             <p className="font-mono text-xs tracking-widest text-copper">
               {String(i + 1).padStart(2, "0")}
             </p>

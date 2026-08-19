@@ -13,5 +13,6 @@ export const demoTape = {
     wifi: "A Toronto laptop misses the slot",
   },
   leave: "Anyone who deposited can withdraw without the curator and without us.",
-  status: "Fixture until the program ticks. Join is the same verb as on-chain join.",
+  status:
+    "Fixture until the program ticks. One named receipt — slot, landing, freeze, leave — not a yield catalog.",
 } as const;

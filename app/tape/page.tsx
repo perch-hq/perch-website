@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Demo tape",
   description:
-    "A named curator’s vault: ticks, fee skim, landing, freeze, and leave. Not a yield catalog.",
+    "One named receipt: ticks, landing, freeze, and leave. Not a yield catalog.",
   alternates: { canonical: `${site.url}${site.tape}` },
 };
 

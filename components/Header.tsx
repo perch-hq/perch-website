@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 
 const links = [
   { href: "/#product", label: "Product" },
+  { href: "/#how", label: "How" },
   { href: site.docs, label: "Docs" },
 ] as const;
 

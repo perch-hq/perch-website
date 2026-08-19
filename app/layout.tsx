@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "Hummingbot",
     "Condor",
     "hummingbot-api",
-    "curator vault",
+    "sealed Act plane",
     "Meteora",
     "Colosseum",
   ],

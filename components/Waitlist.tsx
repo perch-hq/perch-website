@@ -5,8 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { site } from "@/lib/site";
 
 const roles = [
-  { value: "curator", label: "I want to open a vault" },
-  { value: "lp", label: "I want to join the demo tape" },
+  { value: "curator", label: "I run a strategy" },
   { value: "agent", label: "I build agents" },
   { value: "curious", label: "Just looking" },
 ] as const;
@@ -14,7 +13,7 @@ const roles = [
 type Role = (typeof roles)[number]["value"];
 
 function parseRole(value: string | null): Role {
-  if (value === "lp" || value === "agent" || value === "curious") {
+  if (value === "agent" || value === "curious") {
     return value;
   }
   return "curator";
@@ -50,12 +49,12 @@ function WaitlistForm() {
         <div>
           <p className="eyebrow">Design partners</p>
           <h2 className="mt-4 font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-            Ask for a seat, or ask to join the demo tape.
+            Ask for a seat.
           </h2>
           <p className="measure mt-6 text-ink-muted">
             Seats are for people who already run Condor, hummingbot-api, or
-            another LP agent. Depositors join a named tape — not a ranked
-            catalog.
+            another LP agent, and bounced on two servers plus a pasted key. A
+            named tape is proof that ticks landed — not a catalog to shop.
           </p>
         </div>
         <form

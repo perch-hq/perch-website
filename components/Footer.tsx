@@ -43,8 +43,8 @@ export function Footer({ memos = false }: { memos?: boolean }) {
           </nav>
         </div>
         <p className="measure mt-10 text-sm text-ink-muted">
-          Perch is infrastructure, not an adviser and not a fund. Every vault
-          belongs to the curator who opened it, not to us. Colosseum Fall 2026.
+          Perch is infrastructure, not an adviser and not a fund. You run the
+          book. We rent the seat. We never hold the money. Colosseum Fall 2026.
         </p>
       </div>
     </footer>

@@ -4,7 +4,7 @@ import { Trust } from "@/components/Trust";
 export const metadata: Metadata = {
   title: "Trust",
   description:
-    "No login on the trading box. The vault holds the money. Freeze stops the next trade. Anyone can withdraw.",
+    "Vault PDA plus Deposit. freeze kills act. Bond is on the lease. Honest ticks are a receipt stack, not TEE.",
 };
 
 export default function TrustDoc() {

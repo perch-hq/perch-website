@@ -1,15 +1,30 @@
 const objects = [
   {
-    title: "The money",
-    body: "The vault holds the tokens and the position, and every deposit still belongs to the person who made it. The seat can trade that position and pay out the fee you named. There is no route from the vault to an address we picked.",
+    title: "Inventory",
+    body: "Vault PDA owns tokens and, for venue 0, the Meteora PositionV2. Each LP — including the curator — holds a Deposit PDA. act CPI-signs named lb_clmm ixs only. The only extra Transfer is the fee_bps skim to a curator ATA named on the vault.",
   },
   {
-    title: "Stopping",
-    body: "You can freeze the seat, and so can we. The next trade simply fails. Depositors cannot — one person should not be able to halt everyone else — and they never need to, because they can just leave.",
+    title: "Halt",
+    body: "Curator or operator freeze. The next vault.act fails on the CPI, not as ToS. LPs do not freeze the vault. Freeze does not return inventory.",
   },
   {
-    title: "Leaving",
-    body: "Withdrawing does not depend on you, on us, or on the seat still running. Anyone can take their own share out at any time. A stop button that still holds the money is not a stop button.",
+    title: "Bond",
+    body: "USDC locked on the lease. Extra-judicial: operator slashes or refunds. Permissionless refund after expires_at if not slashed. Performance bond, not LP capital.",
+  },
+] as const;
+
+const receipts = [
+  {
+    title: "Solana txs",
+    body: "Source of truth. Presence of a tx proves a tick. Absence does not prove we delayed versus the controller chose wait.",
+  },
+  {
+    title: "Landing dashboard",
+    body: "Colo versus Toronto first-block / slot lag. Demo beat, not a PnL claim versus Jump.",
+  },
+  {
+    title: "Config hash",
+    body: "sha256(controller_config) on the vault, optionally in an act memo. hummingbot-api snapshots are UX and untrusted without SSH.",
   },
 ] as const;
 
@@ -18,22 +33,29 @@ export function Trust() {
     <section id="trust" className="site scroll-mt-20 pb-20 sm:pb-28">
       <p className="eyebrow">Trust</p>
       <h1 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-        You never get a login. Neither does your bot.
+        Three objects. Receipts, not TEE.
       </h1>
       <p className="measure mt-6 text-ink-muted">
-        There is no login to hand out and no key to leak — not for you, not for
-        the people who deposit, not for an agent you point at the vault. The
-        seat can trade your vault and only your vault. You can stop it at any
-        time, and everyone who deposited can take their share back out even
-        with you gone.
+        No-SSH binds the curator, the LPs, and the LLM — not us. Theft-resistance
+        is the vault PDA. Honest ticks are a contract plus a public receipt
+        stack. Do not claim BAM, TDX, or CPI prove a rebalance was non-toxic.
       </p>
       <div className="mt-12 grid gap-10 lg:grid-cols-3">
         {objects.map((item) => (
           <article key={item.title}>
-            <h3 className="border-t border-copper pt-5 font-serif text-2xl">
+            <h2 className="border-t border-copper pt-5 font-serif text-2xl">
               {item.title}
-            </h3>
+            </h2>
             <p className="mt-4 text-[0.95rem] text-ink-muted">{item.body}</p>
+          </article>
+        ))}
+      </div>
+      <h2 className="mt-16 max-w-2xl font-serif text-2xl">Receipt stack</h2>
+      <div className="mt-8 grid gap-10 sm:grid-cols-3">
+        {receipts.map((item) => (
+          <article key={item.title} className="border-t border-hairline pt-5">
+            <h3 className="text-lg">{item.title}</h3>
+            <p className="mt-3 text-[0.95rem] text-ink-muted">{item.body}</p>
           </article>
         ))}
       </div>

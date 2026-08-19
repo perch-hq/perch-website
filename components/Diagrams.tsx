@@ -109,11 +109,12 @@ export function SplitPlane() {
         <figcaption className="measure">
           <p className="eyebrow">The seat</p>
           <h1 className="mt-4 font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-            Condor can live anywhere. hummingbot-api cannot.
+            Cheap plane anywhere. Act plane cannot.
           </h1>
           <p className="mt-6 text-ink-muted">
-            Condor, or another agent, can think from a laptop, a server, or a
-            schedule. hummingbot-api on the perch is what sends. Keys never sit
+            Condor, or another agent, thinks on the cheap plane. hummingbot-api
+            plus the Gateway-shaped shim sit on AMS or FRA. The shim crank signs{" "}
+            <code className="font-mono text-ink">vault.act</code>. Keys never sit
             on your machine and never inside the bot.
           </p>
         </figcaption>
@@ -125,14 +126,14 @@ export function SplitPlane() {
             fontFamily="inherit"
           >
             <title id="split-title">
-              Condor thinks anywhere. hummingbot-api sends from Amsterdam or
+              Cheap plane thinks anywhere. Act plane sends from Amsterdam or
               Frankfurt.
             </title>
             <desc id="split-desc">
-              You, the people who deposit, and Condor or another agent all run
-              anywhere without trading keys, connected by API only. On the
-              Amsterdam or Frankfurt seat, hummingbot-api hands orders to a
-              sealed signer that sends them. Keys never leave that side.
+              You and Condor or another agent run anywhere without trading keys,
+              connected by API only. Your own Deposit ticks first; other LPs are
+              optional. On the Amsterdam or Frankfurt Act plane, hummingbot-api
+              hands orders to the shim crank. Keys never leave that side.
             </desc>
             <Panel x={0} y={28} w={400} h={292} />
             <Label x={20} y={52}>
@@ -143,8 +144,8 @@ export function SplitPlane() {
               y={72}
               w={360}
               h={56}
-              title="You and your depositors"
-              sub="Join, freeze and leave from a wallet"
+              title="You — own Deposit first"
+              sub="LPs optional, after a tape exists"
             />
             <Node
               x={20}
@@ -184,7 +185,7 @@ export function SplitPlane() {
 
             <Panel x={480} y={28} w={400} h={292} accent />
             <Label x={500} y={52} color={copper}>
-              AMS / FRA
+              ACT PLANE
             </Label>
             <Node
               x={500}
@@ -207,8 +208,8 @@ export function SplitPlane() {
               y={148}
               w={360}
               h={56}
-              title="Sealed signer"
-              sub="Signs the trade"
+              title="Shim crank"
+              sub="Signs vault.act · no Token approve"
               accent
             />
             <line
@@ -241,12 +242,12 @@ export function VaultCustody() {
         <figcaption className="measure">
           <p className="eyebrow">Custody</p>
           <h2 className="mt-4 font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-            The vault holds the money. The seat only trades it.
+            The vault holds the money. The crank only trades it.
           </h2>
           <p className="mt-6 text-ink-muted">
-            The money lives in the vault, never with us. That is what keeps
-            withdrawals working when the seat is frozen and nobody is around to
-            sign.
+            We operate the shim crank, so inventory cannot live with us. The
+            vault PDA is the lock. Withdrawals work when the seat is frozen and
+            nobody is around to sign.
           </p>
         </figcaption>
         <div className="diagram-scroll mt-10">
@@ -257,13 +258,13 @@ export function VaultCustody() {
             fontFamily="inherit"
           >
             <title id="vault-title">
-              The vault holds the money. The seat only signs.
+              The vault holds the money. The shim crank only signs.
             </title>
             <desc id="vault-desc">
-              No key ever goes on the machine. The vault holds the tokens and
-              the Meteora position, and it signs trades only while the seat is
-              live and unfrozen. Everyone who deposited can withdraw without
-              the curator.
+              No key ever goes on the machine. The vault PDA holds the tokens
+              and the Meteora position. The shim crank signs vault.act only
+              while the lease is live and unfrozen. Anyone with a Deposit can
+              withdraw without the curator.
             </desc>
 
             <Node
@@ -272,23 +273,23 @@ export function VaultCustody() {
               w={250}
               h={72}
               title="Curator"
-              sub="Opens the vault · never gets a login"
+              sub="Opens the vault · own Deposit ticks first"
             />
             <Node
               x={315}
               y={8}
               w={250}
               h={72}
-              title="The seat, held on-chain"
-              sub="Freeze stops the trading"
+              title="Lease, on-chain"
+              sub="freeze stops vault.act"
             />
             <Node
               x={630}
               y={8}
               w={250}
               h={72}
-              title="The signer on it"
-              sub="Trades, but cannot withdraw"
+              title="Shim crank"
+              sub="Signs act · cannot Transfer out"
               accent
             />
 
@@ -339,7 +340,7 @@ export function VaultCustody() {
               The vault
             </text>
             <text x={220} y={204} fill={muted} fontSize={12}>
-              Holds the money and the position. Every share stays its owner’s.
+              Holds tokens and PositionV2. Each Deposit stays its owner’s.
             </text>
             <text x={220} y={224} fill={muted} fontSize={12}>
               Withdrawals work with the curator gone.

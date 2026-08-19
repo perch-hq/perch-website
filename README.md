@@ -1,6 +1,6 @@
 # Perch
 
-Deploy a Hummingbot strategy. Or join a vault that already ticks.
+Deploy a Hummingbot strategy. We run the hands. You never log in.
 
 Live: [https://perch.poroburu.com](https://perch.poroburu.com). Docs: [https://perch.poroburu.com/docs](https://perch.poroburu.com/docs). Demo tape: [https://perch.poroburu.com/tape](https://perch.poroburu.com/tape). Pages artifact host is `perch-hq/perch-website`. `perch.trade` waits for a real demo.
 
