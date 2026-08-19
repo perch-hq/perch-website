@@ -2,7 +2,7 @@
 
 Perch — colocated Solana trading seats.
 
-Live: [https://perch.poroburu.com](https://perch.poroburu.com). Origin is GitHub Pages (`poroburu.github.io/perch-website/`). `perch.trade` waits for a real demo.
+Live: [https://perch.poroburu.com](https://perch.poroburu.com). Pages artifact host is `perch-hq/perch-website`. `perch.trade` waits for a real demo.
 
 ```bash
 npm run dev
