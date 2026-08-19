@@ -36,6 +36,9 @@ export const metadata: Metadata = {
   keywords: [
     "Perch",
     "Solana",
+    "Hummingbot",
+    "Condor",
+    "hummingbot-api",
     "curator vault",
     "Meteora",
     "Colosseum",

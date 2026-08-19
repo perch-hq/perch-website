@@ -1,76 +1,24 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 
-export function Seat() {
-  return (
-    <svg
-      viewBox="0 0 320 400"
-      role="img"
-      aria-labelledby="seat-title seat-desc"
-      className="h-auto w-full max-w-[22rem]"
-    >
-      <title id="seat-title">Sealed seat mark</title>
-      <desc id="seat-desc">
-        A copper chevron perched in a square on a rail, marked as seat 01 in
-        Amsterdam: a sealed seat with no login, holding none of the money.
-      </desc>
-      <rect
-        x="48"
-        y="36"
-        width="224"
-        height="224"
-        rx="8"
-        fill="var(--bg-raised)"
-        stroke="var(--hairline)"
-      />
-      <text
-        x="68"
-        y="64"
-        fill="var(--ink-muted)"
-        fontSize="11"
-        letterSpacing="0.18em"
-        fontFamily="ui-monospace, monospace"
-      >
-        01
-      </text>
-      <text
-        x="228"
-        y="240"
-        fill="var(--copper)"
-        fontSize="11"
-        letterSpacing="0.18em"
-        fontFamily="ui-monospace, monospace"
-      >
-        AMS
-      </text>
-      <path d="M160 96 204 184H116Z" fill="var(--copper)" />
-      <path
-        d="M40 292h240"
-        stroke="var(--copper)"
-        strokeWidth="1.5"
-        strokeLinecap="square"
-      />
-      <text
-        x="160"
-        y="328"
-        textAnchor="middle"
-        fill="var(--ink-muted)"
-        fontSize="13"
-      >
-        Sealed seat · no login
-      </text>
-      <text
-        x="160"
-        y="352"
-        textAnchor="middle"
-        fill="var(--ink-muted)"
-        fontSize="13"
-      >
-        We never hold the money
-      </text>
-    </svg>
-  );
-}
+const doors = [
+  {
+    k: "01",
+    title: "Deploy Hummingbot strategies",
+    body: "Condor — or another agent — keeps thinking where it is. hummingbot-api on a sealed seat is what actually sends. You open the vault. You keep the fee.",
+    href: "/?role=curator#waitlist",
+    cta: "Request a seat",
+    primary: true,
+  },
+  {
+    k: "02",
+    title: "Join a vault",
+    body: "Opt into a named curator’s tape. You hold a share. You can leave without them, and without us. This is not a yield catalog.",
+    href: site.tape,
+    cta: "Read the demo tape",
+    primary: false,
+  },
+] as const;
 
 export function Hero() {
   return (
@@ -79,41 +27,48 @@ export function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute -right-24 -top-32 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(196,122,74,0.18),transparent_68%)]"
       />
-      <div className="site grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-8 lg:py-28">
-        <div>
-          <p className="eyebrow">Colosseum Fall 2026</p>
-          <h1 className="mt-6 font-serif text-[2.65rem] leading-[1.12] tracking-tight sm:text-6xl sm:leading-[1.08] lg:text-[4.15rem]">
-            Build a vault.
-            <br />
-            Charge a fee.
-            <br />
-            Stay private.
-            <br />
-            <em className="italic text-copper">Leave anytime.</em>
-          </h1>
-          <p className="measure mt-8 text-lg text-ink-muted">
-            Your own vault for a strategy you already run. Invite who you want,
-            keep the fee, and anyone can withdraw. We rent the seat the trades
-            leave from.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <a
-              href="#waitlist"
-              className="border border-copper bg-copper px-4 py-2.5 text-sm text-bg transition-colors hover:bg-transparent hover:text-copper"
-            >
-              Request a seat
-            </a>
-            <Link
-              href={site.docs}
-              className="border border-hairline px-4 py-2.5 text-sm text-ink-muted transition-colors hover:border-ink hover:text-ink"
-            >
-              Read the docs
-            </Link>
-          </div>
+      <div className="site py-16 sm:py-24 lg:py-28">
+        <p className="eyebrow">Colosseum Fall 2026</p>
+        <h1 className="mt-6 max-w-4xl font-serif text-[2.45rem] leading-[1.12] tracking-tight sm:text-6xl sm:leading-[1.08] lg:text-[4rem]">
+          Deploy a strategy.
+          <br />
+          Or join a vault that{" "}
+          <em className="italic text-copper">already ticks.</em>
+        </h1>
+        <p className="measure mt-8 text-lg text-ink-muted">
+          Condor stays on your machine. hummingbot-api sends from a sealed seat
+          in Amsterdam or Frankfurt. We rent that seat. We never hold the
+          money.
+        </p>
+        <div className="mt-14 grid gap-px bg-hairline lg:grid-cols-2">
+          {doors.map((door) => (
+            <article key={door.k} className="bg-bg p-8 sm:p-10">
+              <p className="font-mono text-xs tracking-widest text-copper">
+                {door.k}
+              </p>
+              <h2 className="mt-4 font-serif text-3xl leading-snug">
+                {door.title}
+              </h2>
+              <p className="mt-4 text-[0.95rem] text-ink-muted">{door.body}</p>
+              <Link
+                href={door.href}
+                className={
+                  door.primary
+                    ? "mt-8 inline-block border border-copper bg-copper px-4 py-2.5 text-sm text-bg transition-colors hover:bg-transparent hover:text-copper"
+                    : "mt-8 inline-block border border-hairline px-4 py-2.5 text-sm text-ink-muted transition-colors hover:border-ink hover:text-ink"
+                }
+              >
+                {door.cta}
+              </Link>
+            </article>
+          ))}
         </div>
-        <div className="flex justify-center lg:justify-end">
-          <Seat />
-        </div>
+        <Link
+          href={site.docs}
+          className="mt-8 inline-block text-sm text-ink-muted transition-colors hover:text-ink"
+        >
+          Read the docs
+        </Link>
       </div>
     </section>
   );

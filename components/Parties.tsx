@@ -2,17 +2,17 @@ const parties = [
   {
     name: "Curator",
     hold: "The vault",
-    body: "That is you. You open the vault, set the fee, and decide who can join.",
+    body: "You already run Condor or another LP agent. You open the vault, set the fee, and decide who can join.",
   },
   {
     name: "Depositors",
     hold: "A share each",
-    body: "They join, they hold a share, and they can leave whenever they like.",
+    body: "They join a named tape, they hold a share, and they can leave whenever they like.",
   },
   {
     name: "Perch",
     hold: "The seat",
-    body: "We rent the seat the trades leave from. We never hold the money.",
+    body: "We host hummingbot-api on a machine you cannot log into. We never hold the money.",
   },
 ] as const;
 

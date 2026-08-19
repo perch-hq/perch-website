@@ -1,9 +1,32 @@
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, Suspense, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import { site } from "@/lib/site";
 
-export function Waitlist() {
+const roles = [
+  { value: "curator", label: "I want to open a vault" },
+  { value: "lp", label: "I want to join the demo tape" },
+  { value: "agent", label: "I build agents" },
+  { value: "curious", label: "Just looking" },
+] as const;
+
+type Role = (typeof roles)[number]["value"];
+
+function parseRole(value: string | null): Role {
+  if (value === "lp" || value === "agent" || value === "curious") {
+    return value;
+  }
+  return "curator";
+}
+
+function WaitlistForm() {
+  const params = useSearchParams();
+  const defaultRole = useMemo(
+    () => parseRole(params.get("role")),
+    [params],
+  );
+
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -27,8 +50,13 @@ export function Waitlist() {
         <div>
           <p className="eyebrow">Design partners</p>
           <h2 className="mt-4 font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-            If you already run a strategy, ask for a seat.
+            Ask for a seat, or ask to join the demo tape.
           </h2>
+          <p className="measure mt-6 text-ink-muted">
+            Seats are for people who already run Condor, hummingbot-api, or
+            another LP agent. Depositors join a named tape — not a ranked
+            catalog.
+          </p>
         </div>
         <form
           onSubmit={onSubmit}
@@ -49,13 +77,14 @@ export function Waitlist() {
               Role
               <select
                 name="role"
-                defaultValue="curator"
+                defaultValue={defaultRole}
                 className="border border-hairline bg-bg px-3 py-2 text-ink"
               >
-                <option value="curator">I want to open a vault</option>
-                <option value="lp">I want to deposit in one</option>
-                <option value="agent">I build agents</option>
-                <option value="curious">Just looking</option>
+                {roles.map((role) => (
+                  <option key={role.value} value={role.value}>
+                    {role.label}
+                  </option>
+                ))}
               </select>
             </label>
             <label className="grid gap-2 text-sm">
@@ -63,7 +92,7 @@ export function Waitlist() {
               <textarea
                 name="running"
                 rows={3}
-                placeholder="A Meteora bot, a public vault, a script on a server…"
+                placeholder="Condor, hummingbot-api, a Meteora bot…"
                 className="border border-hairline bg-bg px-3 py-2 text-ink placeholder:text-ink-muted"
               />
             </label>
@@ -77,5 +106,22 @@ export function Waitlist() {
         </form>
       </div>
     </section>
+  );
+}
+
+export function Waitlist() {
+  return (
+    <Suspense
+      fallback={
+        <section id="waitlist" className="scroll-mt-20 border-t border-hairline">
+          <div className="site py-20 sm:py-28">
+            <p className="eyebrow">Design partners</p>
+            <h2 className="mt-4 font-serif text-3xl">Ask for a seat.</h2>
+          </div>
+        </section>
+      }
+    >
+      <WaitlistForm />
+    </Suspense>
   );
 }

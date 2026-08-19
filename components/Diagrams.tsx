@@ -109,12 +109,12 @@ export function SplitPlane() {
         <figcaption className="measure">
           <p className="eyebrow">The seat</p>
           <h1 className="mt-4 font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-            Your strategy can live anywhere. Trades cannot.
+            Condor can live anywhere. hummingbot-api cannot.
           </h1>
           <p className="mt-6 text-ink-muted">
-            Think from anywhere — a laptop, a server, an agent on a schedule.
-            The signing happens on the perch, so the keys are never on your
-            machine and never inside your bot.
+            Condor, or another agent, can think from a laptop, a server, or a
+            schedule. hummingbot-api on the perch is what sends. Keys never sit
+            on your machine and never inside the bot.
           </p>
         </figcaption>
         <div className="diagram-scroll mt-10">
@@ -125,13 +125,14 @@ export function SplitPlane() {
             fontFamily="inherit"
           >
             <title id="split-title">
-              Think anywhere. Sign from Amsterdam or Frankfurt.
+              Condor thinks anywhere. hummingbot-api sends from Amsterdam or
+              Frankfurt.
             </title>
             <desc id="split-desc">
-              You, the people who deposit, and any agent all run anywhere
-              without trading keys, connected by API only. On the Amsterdam or
-              Frankfurt seat, a trading engine hands orders to a sealed signer
-              that sends them. Keys never leave that side.
+              You, the people who deposit, and Condor or another agent all run
+              anywhere without trading keys, connected by API only. On the
+              Amsterdam or Frankfurt seat, hummingbot-api hands orders to a
+              sealed signer that sends them. Keys never leave that side.
             </desc>
             <Panel x={0} y={28} w={400} h={292} />
             <Label x={20} y={52}>
@@ -150,7 +151,7 @@ export function SplitPlane() {
               y={140}
               w={360}
               h={56}
-              title="Agent"
+              title="Condor or another agent"
               sub="Thinks. Never signs."
             />
             <Node
@@ -190,7 +191,7 @@ export function SplitPlane() {
               y={72}
               w={360}
               h={56}
-              title="Trading engine"
+              title="hummingbot-api"
               sub="Places the orders"
             />
             <line
