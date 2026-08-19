@@ -32,8 +32,8 @@ export function Footer() {
           </nav>
         </div>
         <p className="measure mt-10 text-sm text-ink-muted">
-          Perch is infrastructure, not an advisor. The curator is not us. Do
-          not call it a fund. Colosseum Fall 2026.
+          Perch is infrastructure, not an adviser and not a fund. Every vault
+          belongs to the curator who opened it, not to us. Colosseum Fall 2026.
         </p>
       </div>
     </footer>

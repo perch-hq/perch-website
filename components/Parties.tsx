@@ -2,26 +2,26 @@ const parties = [
   {
     name: "Curator",
     hold: "The vault",
-    body: "You open it, set the fee, and may keep it private. Your own capital is just another deposit. You never get a login.",
+    body: "That is you. You open the vault, set the fee and decide who can join. Your own money sits in it on the same terms as everyone else’s, and you never get a login to the machine.",
   },
   {
-    name: "LP",
-    hold: "A deposit",
-    body: "You opt in after a tape exists. You can leave without the curator and without us. You do not get a seat.",
+    name: "Depositors",
+    hold: "A share each",
+    body: "They join a vault with a history they can check, and they can leave whenever they like — with or without you. What they hold is their share, not the keys.",
   },
   {
     name: "Perch",
     hold: "The seat",
-    body: "We rent the colocated box and operate the signer on it. We cannot transfer inventory out. We do not take LP yield.",
+    body: "We run the machine in Amsterdam or Frankfurt that your trades go out from. It can trade your vault and nothing else. We charge rent for that, not a slice of the returns.",
   },
 ] as const;
 
 export function Parties() {
   return (
     <section className="site pb-20 sm:pb-28">
-      <p className="eyebrow">Three parties</p>
+      <p className="eyebrow">Who does what</p>
       <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-        Do not collapse them into one button.
+        You run the vault. They hold a share. We rent the seat.
       </h2>
       <div className="mt-12 grid gap-px bg-hairline lg:grid-cols-3">
         {parties.map((party) => (

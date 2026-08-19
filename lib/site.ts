@@ -3,7 +3,7 @@ export const site = {
   url: "https://perch.poroburu.com",
   tagline: "Build a vault. Charge a fee. Stay private. Leave anytime.",
   description:
-    "You open a vault. People opt in. You collect a fee. We rent the sealed seat under it. We never hold inventory.",
+    "Open a vault on Solana, set your own fee, and choose who can join. Perch rents the seat your trades go out from and never holds the money.",
   github: "https://github.com/perch-hq",
   parent: "https://github.com/perch-hq/f26-perch",
   memo: "https://github.com/perch-hq/f26-perch/blob/main/PERCH.md",

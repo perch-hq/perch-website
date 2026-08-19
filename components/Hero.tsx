@@ -10,8 +10,8 @@ export function Seat() {
     >
       <title id="seat-title">Sealed seat mark</title>
       <desc id="seat-desc">
-        A copper chevron perched in a square on a rail. The seat is in
-        Amsterdam. Isolation capacity is numbered, not unlimited.
+        A copper chevron perched in a square on a rail, marked as seat 01 in
+        Amsterdam: a sealed seat with no login, holding none of the money.
       </desc>
       <rect
         x="48"
@@ -65,7 +65,7 @@ export function Seat() {
         fill="var(--ink-muted)"
         fontSize="13"
       >
-        We never hold inventory
+        We never hold the money
       </text>
     </svg>
   );
@@ -91,8 +91,9 @@ export function Hero() {
             <em className="italic text-copper">Leave anytime.</em>
           </h1>
           <p className="measure mt-8 text-lg text-ink-muted">
-            Not our vault. Yours. People who opt in pay you. If you stop, they
-            leave. We rent the sealed seat under it. We never hold inventory.
+            The vault is yours. You set the fee, you choose who gets in, and
+            anyone can withdraw whenever they want. Perch only rents the seat
+            your trades go out from — we never hold the money.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <a

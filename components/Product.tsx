@@ -1,19 +1,19 @@
 const pillars = [
   {
     title: "You build the vault",
-    body: "Not ours. You open it. Your own capital ticks first so a tape exists. Others opt in after that — or they don’t.",
+    body: "You open it, you pick the strategy, you own the track record. Your own money goes in first, so there is something real to look at before anyone else decides.",
   },
   {
     title: "Charge a fee",
-    body: "Claimed venue fees skim to you at a rate you set once. We take seat rent. We do not take LP yield.",
+    body: "Set your rate once and your share of every fee the vault earns comes straight to you. Perch charges rent for the seat and takes nothing out of what your depositors make.",
   },
   {
     title: "Stay private",
-    body: "An allowlist you control. A second wallet that is not on it is rejected. Private is membership, not encryption.",
+    body: "Keep it invite-only and only the wallets you named can deposit. Anything else is turned away at the door. Private here is about who is in, not about hiding the strategy.",
   },
   {
     title: "Leave anytime",
-    body: "If you stop, each LP withdraws without you and without us. Freeze stops the next tick. It does not trap the money.",
+    body: "Walk away and everyone who deposited can still take their share out, without your signature and without ours. Nothing here can hold the money hostage.",
   },
 ] as const;
 
@@ -22,11 +22,11 @@ export function Product() {
     <section id="product" className="site scroll-mt-20 pb-20 sm:pb-28">
       <p className="eyebrow">The product</p>
       <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-        A vault a person can run. We rent the seat under it.
+        A vault one person can run.
       </h2>
       <p className="measure mt-6 text-ink-muted">
-        Meteora is the first venue. The product is the vault, not the pool. We
-        are not the desk, and we are not a better Kamino.
+        Meteora is the first market we support. What you get is a vault of your
+        own, not another pool to deposit into.
       </p>
       <div className="mt-12 grid gap-10 sm:grid-cols-2">
         {pillars.map((item, i) => (

@@ -1,27 +1,27 @@
 const steps = [
   {
     title: "Open a vault",
-    body: "You lease a sealed seat, set a fee, and name the pool. The fee does not change later on people who already joined.",
+    body: "Rent a seat, choose the pool you want to trade, and set your fee. You set that rate once, so nobody gets repriced after they join.",
   },
   {
     title: "Fund it first",
-    body: "Your own deposit ticks first. A tape exists before anyone else is invited. That tape is on-chain, not a pitch deck.",
+    body: "Your own money goes in before anyone else’s. By the time you invite people, there is a real on-chain history to judge you on instead of a pitch.",
   },
   {
-    title: "Allow people in",
-    body: "Keep it private and allowlist a pubkey. A wallet that is not on the list fails. Or leave it public. LPs do not get a seat.",
+    title: "Invite people in",
+    body: "Invite by wallet and keep it private, or leave it open to anyone. Either way the people who join get a share, not the keys.",
   },
   {
-    title: "Ticks land from colo",
-    body: "The brain can live anywhere. The hands cannot. Amsterdam or Frankfurt sends. Toronto wifi is the comparison, not Jump.",
+    title: "Trades leave from the seat",
+    body: "Run your strategy wherever you like — laptop, cloud, an agent. The orders themselves go out from a machine in Amsterdam or Frankfurt, close to where they land.",
   },
   {
-    title: "Freeze stops signing",
-    body: "An on-chain freeze kills the next tick. It is not a terms-of-service clause, and it is not a withdrawal.",
+    title: "Freeze stops the trading",
+    body: "One transaction and the next trade fails. No support ticket, no waiting on us, and no effect on anyone’s money.",
   },
   {
     title: "Anyone can leave",
-    body: "Each LP withdraws their share with the curator gone and the seat frozen. If they cannot, the abandonment claim is false.",
+    body: "Frozen seat, curator long gone: everyone can still withdraw their own share. Getting out never depends on us.",
   },
 ] as const;
 
@@ -30,7 +30,7 @@ export function HowItWorks() {
     <section id="how" className="site scroll-mt-20 pb-20 sm:pb-28">
       <p className="eyebrow">How it works</p>
       <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-        Six beats. Same story every time.
+        Open, fund, invite, trade, freeze, leave.
       </h2>
       <ol className="mt-12 grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
         {steps.map((step, i) => (

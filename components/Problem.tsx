@@ -1,27 +1,28 @@
 const problems = [
   {
     k: "01",
-    title: "Protocol vaults abandon thin books",
-    body: "When take-rate times AUM cannot pay a desk, the vault dies. Capital waits on the operator. That is the incentive, not a missing APY.",
+    title: "Small vaults get abandoned",
+    body: "Deposit into someone else’s vault and you are relying on their business case. Once it is too small to be worth running, the people running it move on.",
   },
   {
     k: "02",
-    title: "Friends’ capital still means a fund",
-    body: "A person cannot take opt-in capital without becoming a protocol or buying the fund stack. Private allowlists and leave-anytime are how that job skips admin — not how it skips arithmetic.",
+    title: "Friends’ money starts to look like a fund",
+    body: "Let a few people you know in and suddenly you are expected to have paperwork, lockups and a raise. All you wanted was a fee for the strategy you already run.",
   },
   {
     k: "03",
-    title: "Self-hosted still pastes a key",
-    body: "Helius plus a Frankfurt VPS plus SSH is a seat you can leak. Freeze is a terms-of-service clause. Inventory sits in a wallet the operator can copy.",
+    title: "Doing it yourself means holding the keys",
+    body: "Rent a server, paste in a private key, and every risk that follows is yours. Anyone with the login has the keys, and your friends are trusting a promise.",
   },
 ] as const;
 
 export function Problem() {
   return (
     <section className="site pb-20 sm:pb-28">
-      <p className="eyebrow">The job</p>
+      <p className="eyebrow">The problem</p>
       <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-        Protocol desks leave thin books. Self-hosted bots still paste a key.
+        Right now you either hand the vault to a protocol or hold the keys
+        yourself.
       </h2>
       <div className="mt-12 grid gap-px bg-hairline sm:grid-cols-3">
         {problems.map((item) => (

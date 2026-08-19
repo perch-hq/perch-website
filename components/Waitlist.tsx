@@ -27,14 +27,13 @@ export function Waitlist() {
         <div>
           <p className="eyebrow">Design partners</p>
           <h2 className="mt-4 font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-            Isolation capacity is the brake. We are not filling a waitlist
-            token.
+            Seats are scarce on purpose.
           </h2>
           <p className="measure mt-6 text-ink-muted">
-            User 1 is a curator with one opt-in LP. If you already run a
-            Meteora book — or an agent that still pastes a key — request a
-            seat. This opens a GitHub issue. We will not blitzscale tenants
-            onto one box.
+            One curator per machine, so there are only so many to give out. If
+            you already run a Meteora strategy — or an agent that is one pasted
+            key away from trouble — ask for a seat. Start with one person who
+            trusts you. Requesting a seat opens a GitHub issue.
           </p>
         </div>
         <form
@@ -59,9 +58,9 @@ export function Waitlist() {
                 defaultValue="curator"
                 className="border border-hairline bg-bg px-3 py-2 text-ink"
               >
-                <option value="curator">Curator — I want to open a vault</option>
-                <option value="lp">LP — I want to opt in</option>
-                <option value="agent">Agent builder</option>
+                <option value="curator">I want to open a vault</option>
+                <option value="lp">I want to deposit in one</option>
+                <option value="agent">I build agents</option>
                 <option value="curious">Just looking</option>
               </select>
             </label>
@@ -70,7 +69,7 @@ export function Waitlist() {
               <textarea
                 name="running"
                 rows={3}
-                placeholder="Meteora bot, Condor, a thin public vault…"
+                placeholder="A Meteora bot, a public vault, a script on a server…"
                 className="border border-hairline bg-bg px-3 py-2 text-ink placeholder:text-ink-muted"
               />
             </label>

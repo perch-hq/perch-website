@@ -1,15 +1,15 @@
 const objects = [
   {
-    title: "Inventory",
-    body: "The vault program owns the tokens and the position. Each LP owns a deposit. We cannot send funds to an arbitrary address. The only extra destination is the fee you named, and only after a claim.",
+    title: "The money",
+    body: "The vault holds the tokens and the position, and every deposit still belongs to the person who made it. The seat can trade that position and pay out the fee you named. There is no route from the vault to an address we picked.",
   },
   {
-    title: "Halt",
-    body: "Freeze stops the next tick on-chain. You can freeze. We can freeze. LPs cannot — that would be griefing. Halt is not recover.",
+    title: "Stopping",
+    body: "You can freeze the seat, and so can we. The next trade simply fails. Depositors cannot — one person should not be able to halt everyone else — and they never need to, because they can just leave.",
   },
   {
-    title: "Recover",
-    body: "Each LP withdraws their share with the crank offline, the lease frozen, and the curator gone. Freeze-only while we still own the position traps the money. That is the bug we refuse.",
+    title: "Leaving",
+    body: "Withdrawing does not depend on you, on us, or on the seat still running. Anyone can take their own share out at any time. A stop button that still holds the money is not a stop button.",
   },
 ] as const;
 
@@ -18,13 +18,14 @@ export function Trust() {
     <section id="trust" className="site scroll-mt-20 pb-20 sm:pb-28">
       <p className="eyebrow">Trust</p>
       <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-        You never get a login. Keys never leave the seat. Funds are not ours.
+        You never get a login. Neither does your bot.
       </h2>
       <p className="measure mt-6 text-ink-muted">
-        No-SSH binds you, your LPs, and the model — not us. Theft-resistance is
-        the vault program: the signer on the box cannot transfer anywhere.
-        Honest ticks remain a contract. Presence of a transaction proves a
-        tick; absence does not prove delay.
+        There is no login to hand out and no key to leak — not for you, not for
+        the people who deposit, not for an agent you point at the vault. The
+        seat can trade your vault and only your vault. You can stop it at any
+        time, and everyone who deposited can take their share back out even
+        with you gone.
       </p>
       <div className="mt-12 grid gap-10 lg:grid-cols-3">
         {objects.map((item) => (

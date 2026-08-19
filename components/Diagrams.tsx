@@ -109,11 +109,12 @@ export function SplitPlane() {
         <figcaption className="measure">
           <p className="eyebrow">The seat</p>
           <h2 className="mt-4 font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-            The brain can live anywhere. The hands cannot.
+            Your strategy can live anywhere. Trades cannot.
           </h2>
           <p className="mt-6 text-ink-muted">
-            You think remote. Ticks sign only from the perch. The model never
-            sits on colo, and trading keys never sit on the cheap plane.
+            Think from anywhere — a laptop, a server, an agent on a schedule.
+            The signing happens on the perch, so the keys are never on your
+            machine and never inside your bot.
           </p>
         </figcaption>
         <div className="diagram-scroll mt-10">
@@ -124,13 +125,13 @@ export function SplitPlane() {
             fontFamily="inherit"
           >
             <title id="split-title">
-              Split plane: think anywhere, sign from colo
+              Think anywhere. Sign from Amsterdam or Frankfurt.
             </title>
             <desc id="split-desc">
-              Curator, LPs, and the model run anywhere without trading keys,
-              connected by API only. On the Amsterdam or Frankfurt seat,
-              hummingbot-api talks to a shim that signs vault ticks, then sends
-              to the leader. Keys never leave that side.
+              You, the people who deposit, and any agent all run anywhere
+              without trading keys, connected by API only. On the Amsterdam or
+              Frankfurt seat, a trading engine hands orders to a sealed signer
+              that sends them. Keys never leave that side.
             </desc>
             <Panel x={0} y={28} w={400} h={292} />
             <Label x={20} y={52}>
@@ -141,16 +142,16 @@ export function SplitPlane() {
               y={72}
               w={360}
               h={56}
-              title="Curator · LPs"
-              sub="Wallets sign joins, freeze, withdraw"
+              title="You and your depositors"
+              sub="Join, freeze and leave from a wallet"
             />
             <Node
               x={20}
               y={140}
               w={360}
               h={56}
-              title="Agent / LLM"
-              sub="Orient and decide · no Act keys"
+              title="Agent"
+              sub="Thinks. Never signs."
             />
             <Node
               x={20}
@@ -158,7 +159,7 @@ export function SplitPlane() {
               w={360}
               h={80}
               title="No trading keys"
-              sub="If keys are here, the claim is false"
+              sub="Keys stay on the seat"
             />
 
             <line
@@ -189,8 +190,8 @@ export function SplitPlane() {
               y={72}
               w={360}
               h={56}
-              title="hummingbot-api"
-              sub="Deterministic ticks"
+              title="Trading engine"
+              sub="Places the orders"
             />
             <line
               x1={680}
@@ -205,8 +206,8 @@ export function SplitPlane() {
               y={148}
               w={360}
               h={56}
-              title="Sealed shim"
-              sub="Signs the vault tick"
+              title="Sealed signer"
+              sub="Signs the trade"
               accent
             />
             <line
@@ -222,7 +223,7 @@ export function SplitPlane() {
               y={224}
               w={360}
               h={64}
-              title="Leader TPU"
+              title="Sends the trade"
               sub="Keys never leave this side"
             />
           </svg>
@@ -239,11 +240,12 @@ export function VaultCustody() {
         <figcaption className="measure">
           <p className="eyebrow">Custody</p>
           <h2 className="mt-4 font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-            The vault owns the position. The seat only ticks it.
+            The vault holds the money. The seat only trades it.
           </h2>
           <p className="mt-6 text-ink-muted">
-            Pasting a key into a gateway would make us the owner. That path is
-            out of scope. Withdraw works with the seat frozen.
+            The money lives in the vault, never with us. That is what keeps
+            withdrawals working when the seat is frozen and nobody is around to
+            sign.
           </p>
         </figcaption>
         <div className="diagram-scroll mt-10">
@@ -254,13 +256,13 @@ export function VaultCustody() {
             fontFamily="inherit"
           >
             <title id="vault-title">
-              Three objects: lease bond, seat signer, inventory
+              The vault holds the money. The seat only signs.
             </title>
             <desc id="vault-desc">
-              The curator never puts a key on the box. The vault program owns
-              the token accounts and the Meteora position. The seat signs ticks
-              only while the lease is live and unfrozen. Each LP withdraws
-              without the curator.
+              No key ever goes on the machine. The vault holds the tokens and
+              the Meteora position, and it signs trades only while the seat is
+              live and unfrozen. Everyone who deposited can withdraw without
+              the curator.
             </desc>
 
             <Node
@@ -269,23 +271,23 @@ export function VaultCustody() {
               w={250}
               h={72}
               title="Curator"
-              sub="Opens the vault · never on the box"
+              sub="Opens the vault · never gets a login"
             />
             <Node
               x={315}
               y={8}
               w={250}
               h={72}
-              title="Lease · USDC bond"
-              sub="Freeze stops ticks"
+              title="The seat, held on-chain"
+              sub="Freeze stops the trading"
             />
             <Node
               x={630}
               y={8}
               w={250}
               h={72}
-              title="Seat signer"
-              sub="Foothold · cannot transfer"
+              title="The signer on it"
+              sub="Trades, but cannot withdraw"
               accent
             />
 
@@ -317,10 +319,10 @@ export function VaultCustody() {
               open · freeze
             </text>
             <text x={448} y={118} fill={muted} fontSize={11}>
-              lease must be live
+              seat must be live
             </text>
             <text x={628} y={118} fill={muted} fontSize={11}>
-              signs the tick
+              signs the trade
             </text>
 
             <rect
@@ -333,14 +335,13 @@ export function VaultCustody() {
               strokeWidth={2}
             />
             <text x={220} y={180} fill={ink} fontSize={16} fontWeight={500}>
-              Vault program
+              The vault
             </text>
             <text x={220} y={204} fill={muted} fontSize={12}>
-              Owns tokens and the position. LPs hold deposits, not a share
-              mint.
+              Holds the money and the position. Every share stays its owner’s.
             </text>
             <text x={220} y={224} fill={muted} fontSize={12}>
-              Withdraw works with the curator gone.
+              Withdrawals work with the curator gone.
             </text>
 
             <line
@@ -353,7 +354,7 @@ export function VaultCustody() {
             />
             <polygon points="435,280 440,292 445,280" fill={copper} />
             <text x={448} y={272} fill={muted} fontSize={11}>
-              Named venue only · fee skims to you
+              Only the market you named · your fee comes to you
             </text>
 
             <Node
@@ -361,8 +362,8 @@ export function VaultCustody() {
               y={300}
               w={600}
               h={80}
-              title="Meteora DLMM"
-              sub="First venue adapter · not the company"
+              title="Meteora"
+              sub="First market"
               accent
             />
           </svg>
