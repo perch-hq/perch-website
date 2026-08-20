@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Reveal } from "@/components/Reveal";
 import { copy } from "@/lib/copy";
 import { site } from "@/lib/site";
 
@@ -15,20 +16,23 @@ export function HowItWorks() {
         <ol className="mt-14 grid gap-x-16 gap-y-12 sm:grid-cols-2">
           {copy.how.steps.map((step, i) => (
             <li key={step.title}>
-              <p className="font-mono text-[0.7rem] tracking-[0.16em] text-copper">
-                {String(i + 1).padStart(2, "0")}
-              </p>
-              <h3 className="mt-3 text-lg">{step.title}</h3>
-              <p className="mt-3 max-w-md text-[0.95rem] leading-relaxed text-ink-muted">
-                {step.body}
-              </p>
+              <Reveal delay={i * 90}>
+                <p className="font-mono text-[0.7rem] tracking-[0.16em] text-copper">
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-3 text-lg">{step.title}</h3>
+                <p className="mt-3 max-w-md text-[0.95rem] leading-relaxed text-ink-muted">
+                  {step.body}
+                </p>
+              </Reveal>
             </li>
           ))}
         </ol>
       </div>
 
       <div className="site mt-20">
-        <div className="stage grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+        <Reveal>
+          <div className="stage grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
           <div className="border-b border-hairline p-8 sm:p-10 lg:border-b-0 lg:border-r">
             <p className="eyebrow">{copy.trust.eyebrow}</p>
             <h3 className="mt-4 font-serif text-3xl leading-snug">
@@ -66,7 +70,8 @@ export function HowItWorks() {
               {copy.trust.leave.body}
             </p>
           </div>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
