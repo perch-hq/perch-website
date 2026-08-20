@@ -28,7 +28,11 @@ export const copy = {
     menu: "Menu",
   },
   hero: {
-    h1: "Hosted Hummingbot for Solana strategies.",
+    badge: "Now seating design partners",
+    h1: {
+      lead: "Hosted Hummingbot for",
+      accent: "Solana strategies.",
+    },
     lede: "We run Hummingbot on a machine in Amsterdam or Frankfurt that nobody logs into — including you. Your agent stays where it already is. Your capital sits in a Solana vault we cannot drain. You get a white-glove book without standing up operations.",
     cta: "Request access",
     secondary: "How it works",
@@ -144,6 +148,10 @@ export const copy = {
   footer: {
     legal:
       "Perch hosts Hummingbot. We are infrastructure, not an adviser and not a fund. Colosseum Fall 2026.",
+    groups: {
+      site: "Site",
+      elsewhere: "Elsewhere",
+    },
     tapeLabel: "Example receipt",
     docs: "Docs",
     github: "GitHub",

@@ -18,7 +18,7 @@ export default function NotFound() {
         <p className="measure mt-4 text-ink-muted">
           The page is gone. The vault is not.
         </p>
-        <Link href="/" className="mt-8 w-fit text-sm text-copper">
+        <Link href="/" className="btn btn-ghost mt-8 w-fit">
           Back to Perch
         </Link>
       </main>

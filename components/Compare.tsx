@@ -5,7 +5,7 @@ export function Compare() {
       <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
         Kamino is a different job. A VPS is this job without the lock.
       </h2>
-      <div className="mt-10 overflow-x-auto">
+      <div className="stage mt-10 overflow-x-auto px-6 sm:px-8">
         <table className="proof-table min-w-[44rem]">
           <caption className="sr-only">
             Protocol vaults, Helius plus a VPS plus SSH, and Perch
@@ -17,7 +17,7 @@ export function Compare() {
               </th>
               <th scope="col">Protocol vault</th>
               <th scope="col">Helius + VPS + SSH</th>
-              <th scope="col">Perch</th>
+              <th scope="col" className="col-perch">Perch</th>
             </tr>
           </thead>
           <tbody>
@@ -25,43 +25,43 @@ export function Compare() {
               <td>Job</td>
               <td>Deposit-and-forget CLMM</td>
               <td>Run your Hummingbot book</td>
-              <td>Run your Hummingbot book</td>
+              <td className="col-perch">Run your Hummingbot book</td>
             </tr>
             <tr>
               <td>Who runs the book</td>
               <td>The protocol desk</td>
               <td>You, with a shell</td>
-              <td>You. No shell.</td>
+              <td className="col-perch">You. No shell.</td>
             </tr>
             <tr>
               <td>Login to the machine</td>
               <td>—</td>
               <td>Yes, and the Gateway key can leak</td>
-              <td>None to leak</td>
+              <td className="col-perch">None to leak</td>
             </tr>
             <tr>
               <td>Inventory</td>
               <td>Share of a pooled vault</td>
               <td>Wallet the Gateway key owns</td>
-              <td>Vault PDA; each LP a Deposit</td>
+              <td className="col-perch">Vault PDA; each LP a Deposit</td>
             </tr>
             <tr>
               <td>Stopping the trading</td>
               <td>Operator closes it</td>
               <td>Power off, or ToS</td>
-              <td>freeze; next act fails on-chain</td>
+              <td className="col-perch">freeze; next act fails on-chain</td>
             </tr>
             <tr>
               <td>Leave if it is abandoned</td>
               <td>Wait for the operator</td>
               <td>Ask whoever has the keys</td>
-              <td>withdraw without us</td>
+              <td className="col-perch">withdraw without us</td>
             </tr>
             <tr>
               <td>What they take</td>
               <td>Manager cut of LP yield</td>
               <td>RPC + VPS invoice</td>
-              <td>Rent covers colo; fee share if the book performs, then rent can be waived</td>
+              <td className="col-perch">Rent covers colo; fee share if the book performs, then rent can be waived</td>
             </tr>
           </tbody>
         </table>

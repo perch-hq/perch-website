@@ -3,19 +3,29 @@
 :root {
   --bg: #0c0b0a;
   --bg-raised: #141210;
+  --bg-sunken: #090807;
   --ink: #ece6dc;
   --ink-muted: #9a9186;
   --copper: #c47a4a;
+  --ember: #e2a06f;
+  --copper-deep: #8f5a33;
+  --sage: #a9b388;
   --hairline: #2a2622;
+  --hairline-strong: #3b342c;
 }
 
 @theme inline {
   --color-bg: var(--bg);
   --color-bg-raised: var(--bg-raised);
+  --color-bg-sunken: var(--bg-sunken);
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
   --color-copper: var(--copper);
+  --color-ember: var(--ember);
+  --color-copper-deep: var(--copper-deep);
+  --color-sage: var(--sage);
   --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
   --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Instrument Serif", "Instrument Serif Fallback", ui-serif, Georgia,
     serif;
@@ -27,6 +37,7 @@ html {
   color: var(--ink);
   color-scheme: dark;
   scroll-behavior: smooth;
+  scrollbar-color: var(--hairline-strong) var(--bg);
 }
 
 body {
@@ -46,6 +57,21 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--hairline-strong);
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
 ::selection {
   background: var(--copper);
   color: var(--bg);
@@ -54,6 +80,7 @@ body::before {
 :focus-visible {
   outline: 2px solid var(--copper);
   outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .site {
@@ -63,16 +90,183 @@ body::before {
   padding-inline: 1.5rem;
 }
 
+/* Raised panel: warm vertical gradient, rounded corners, and an inner top
+   highlight so it reads as a surface, not a wireframe box. */
 .stage {
-  background: var(--bg-raised);
+  background: linear-gradient(180deg, #171411 0%, var(--bg-raised) 22%);
   border: 1px solid var(--hairline);
+  border-radius: 1rem;
+  box-shadow: inset 0 1px 0 rgba(236, 230, 220, 0.05);
 }
 
 /* Border brightening + faint copper glow on hover. Border width never
    changes and the shadow is outer, so there is no layout shift. */
 .stage:hover {
-  border-color: #604330;
-  box-shadow: 0 0 24px rgba(196, 122, 74, 0.07);
+  border-color: #57402f;
+  box-shadow:
+    inset 0 1px 0 rgba(236, 230, 220, 0.05),
+    0 0 32px rgba(196, 122, 74, 0.09);
+}
+
+/* Smaller interactive card (product items, docs index). */
+.card {
+  background: linear-gradient(180deg, rgba(236, 230, 220, 0.025), transparent 40%);
+  border: 1px solid var(--hairline);
+  border-radius: 0.875rem;
+}
+
+.card:hover {
+  border-color: #57402f;
+  box-shadow: 0 0 28px rgba(196, 122, 74, 0.08);
+}
+
+/* Buttons. Primary carries the only filled color on the page; ghost is a
+   hairline that warms on hover. Both keep the same box so pairs align. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.625rem;
+  border: 1px solid transparent;
+  padding: 0.625rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, var(--ember) 0%, var(--copper) 100%);
+  border-color: rgba(236, 230, 220, 0.14);
+  color: #1d120a;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 8px 24px -12px rgba(196, 122, 74, 0.55);
+}
+
+.btn-primary:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 10px 32px -10px rgba(226, 160, 111, 0.6);
+  filter: brightness(1.06);
+}
+
+.btn-ghost {
+  border-color: var(--hairline-strong);
+  color: var(--ink-muted);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ink-muted);
+  color: var(--ink);
+}
+
+.btn-sm {
+  padding: 0.375rem 0.875rem;
+}
+
+/* Hero eyebrow pill. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: rgba(20, 18, 16, 0.7);
+  padding: 0.375rem 0.875rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  transition:
+    border-color 200ms ease,
+    color 200ms ease;
+}
+
+.badge:hover {
+  border-color: #57402f;
+  color: var(--ink);
+}
+
+.badge .badge-dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 999px;
+  background: var(--copper);
+}
+
+/* Copper gradient for the serif-italic accent word in display headings. */
+.text-gradient {
+  background: linear-gradient(96deg, var(--ember) 0%, var(--copper) 55%, var(--copper-deep) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Quiet link whose arrow nudges right on hover. */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.link-arrow .arrow {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.link-arrow:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Form fields. */
+.field {
+  border: 1px solid var(--hairline);
+  border-radius: 0.625rem;
+  background: var(--bg);
+  padding: 0.625rem 0.875rem;
+  color: var(--ink);
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.field:hover {
+  border-color: var(--hairline-strong);
+}
+
+.field:focus {
+  border-color: var(--copper);
+  box-shadow: 0 0 0 3px rgba(196, 122, 74, 0.18);
+  outline: none;
+}
+
+/* Hero backdrop: hairline grid that fades out, over two copper glows. */
+.grid-fade {
+  background-image:
+    linear-gradient(to right, rgba(236, 230, 220, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(236, 230, 220, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 30%, transparent 75%);
+}
+
+/* Oversized footer wordmark, faded to a whisper. */
+.wordmark {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-style: italic;
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+  user-select: none;
+  background: linear-gradient(180deg, var(--hairline-strong) 0%, transparent 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Scroll reveal: initial hidden state is applied client-side only (see
@@ -92,6 +286,7 @@ body::before {
 .status-dot {
   transition:
     box-shadow 500ms ease,
+    background-color 500ms ease,
     opacity 500ms ease;
 }
 
@@ -100,7 +295,8 @@ body::before {
 }
 
 .status-dot[data-state="confirmed"] {
-  box-shadow: 0 0 8px rgba(196, 122, 74, 0.55);
+  background: var(--sage);
+  box-shadow: 0 0 8px rgba(169, 179, 136, 0.55);
 }
 
 @keyframes status-pulse {
@@ -132,12 +328,24 @@ body::before {
 }
 
 .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   color: var(--ink-muted);
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background: var(--copper);
+  opacity: 0.7;
+  flex: none;
 }
 
 .skip-link {
@@ -149,6 +357,7 @@ body::before {
   color: var(--bg);
   padding: 0.5rem 0.85rem;
   font-size: 0.875rem;
+  border-radius: 0.5rem;
 }
 
 .skip-link:focus {
@@ -178,6 +387,14 @@ summary::-webkit-details-marker {
   vertical-align: top;
 }
 
+.proof-table tbody tr {
+  transition: background-color 200ms ease;
+}
+
+.proof-table tbody tr:hover {
+  background: rgba(236, 230, 220, 0.02);
+}
+
 .proof-table th {
   color: var(--ink-muted);
   font-size: 0.72rem;
@@ -189,6 +406,20 @@ summary::-webkit-details-marker {
 .proof-table td:first-child {
   color: var(--ink-muted);
   width: 22%;
+}
+
+/* Tables sit inside .stage shells; the shell's border is the bottom edge. */
+.proof-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Emphasis column in comparison tables (Perch). */
+.proof-table .col-perch {
+  background: rgba(196, 122, 74, 0.05);
+}
+
+.proof-table th.col-perch {
+  color: var(--copper);
 }
 
 .diagram-scroll {
@@ -211,8 +442,23 @@ summary::-webkit-details-marker {
       box-shadow 450ms ease;
   }
 
+  .card {
+    transition:
+      border-color 350ms ease,
+      box-shadow 350ms ease,
+      transform 350ms ease;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+  }
+
   .console-enter {
     animation: console-enter 700ms ease 150ms both;
+  }
+
+  .badge .badge-dot {
+    animation: status-pulse 2.6s ease-in-out infinite;
   }
 }
 

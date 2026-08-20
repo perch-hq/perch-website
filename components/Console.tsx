@@ -26,10 +26,21 @@ export function Console() {
       className="stage console-enter overflow-hidden"
     >
       <div className="flex items-center justify-between border-b border-hairline px-4 py-3">
-        <p className="font-mono text-[0.7rem] tracking-[0.14em] text-ink-muted uppercase">
-          {copy.console.region}
-        </p>
-        <p className="flex items-center gap-2 font-mono text-[0.7rem] tracking-wide text-copper">
+        <div className="flex items-center gap-3">
+          <div aria-hidden="true" className="flex gap-1.5">
+            <span className="size-2 rounded-full bg-hairline-strong" />
+            <span className="size-2 rounded-full bg-hairline-strong" />
+            <span className="size-2 rounded-full bg-copper/70" />
+          </div>
+          <p className="font-mono text-[0.7rem] tracking-[0.14em] text-ink-muted uppercase">
+            {copy.console.region}
+          </p>
+        </div>
+        <p
+          className={`flex items-center gap-2 font-mono text-[0.7rem] tracking-wide transition-colors duration-500 ${
+            confirmed ? "text-sage" : "text-copper"
+          }`}
+        >
           <span
             aria-hidden="true"
             className="status-dot size-1.5 rounded-full bg-copper"

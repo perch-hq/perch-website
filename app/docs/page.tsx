@@ -35,18 +35,21 @@ export default function DocsHome() {
           </article>
         ))}
       </div>
-      <ul className="mt-16 grid gap-10 sm:grid-cols-2">
+      <ul className="mt-16 grid gap-5 sm:grid-cols-2">
         {pages.map((page) => (
-          <li key={page.href} className="border-t border-hairline pt-6">
-            <p className="font-mono text-xs tracking-widest text-copper">
-              {page.label}
-            </p>
-            <h2 className="mt-3 font-serif text-2xl">
-              <Link href={page.href} className="hover:text-copper">
+          <li key={page.href}>
+            <Link
+              href={page.href}
+              className="card group block h-full p-6 sm:p-7"
+            >
+              <p className="font-mono text-xs tracking-widest text-copper">
+                {page.label}
+              </p>
+              <h2 className="mt-3 font-serif text-2xl transition-colors group-hover:text-copper">
                 {page.title}
-              </Link>
-            </h2>
-            <p className="mt-3 text-[0.95rem] text-ink-muted">{page.summary}</p>
+              </h2>
+              <p className="mt-3 text-[0.95rem] text-ink-muted">{page.summary}</p>
+            </Link>
           </li>
         ))}
       </ul>

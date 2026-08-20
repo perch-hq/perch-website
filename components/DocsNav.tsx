@@ -17,7 +17,7 @@ export function DocsNav() {
 
   return (
     <nav aria-label="Documentation" className="site border-b border-hairline">
-      <ul className="flex flex-wrap gap-x-6 gap-y-3 py-4">
+      <ul className="flex flex-wrap gap-2 py-4">
         {docsNav.map((item) => {
           const active = isActive(pathname, item.href);
           return (
@@ -25,8 +25,10 @@ export function DocsNav() {
               <Link
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`text-sm transition-colors hover:text-ink ${
-                  active ? "text-ink" : "text-ink-muted"
+                className={`inline-block rounded-full border px-3.5 py-1.5 text-sm transition-colors ${
+                  active
+                    ? "border-hairline-strong bg-bg-raised text-ink"
+                    : "border-transparent text-ink-muted hover:border-hairline hover:text-ink"
                 }`}
               >
                 {item.label}

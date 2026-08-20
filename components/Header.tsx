@@ -11,7 +11,7 @@ const links = [
 
 export function Header({ current }: { current?: "docs" | "tape" }) {
   return (
-    <header className="sticky top-0 z-40 border-b border-hairline/80 bg-bg/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-hairline/60 bg-bg/75 backdrop-blur-xl">
       <div className="site flex h-14 items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-2.5 text-sm tracking-wide">
           <Mark className="size-7 text-copper" />
@@ -33,10 +33,7 @@ export function Header({ current }: { current?: "docs" | "tape" }) {
               </Link>
             );
           })}
-          <Link
-            href="/#waitlist"
-            className="border border-copper px-3 py-1.5 text-sm text-copper transition-colors hover:bg-copper hover:text-bg"
-          >
+          <Link href="/#waitlist" className="btn btn-primary btn-sm">
             {copy.header.cta}
           </Link>
         </nav>
@@ -44,7 +41,7 @@ export function Header({ current }: { current?: "docs" | "tape" }) {
           <summary aria-label={copy.header.menu} className="cursor-pointer text-sm text-ink-muted">
             {copy.header.menu}
           </summary>
-          <div className="absolute right-0 mt-3 w-48 border border-hairline bg-bg-raised p-3 shadow-xl">
+          <div className="absolute right-0 mt-3 w-52 rounded-xl border border-hairline-strong bg-bg-raised p-3 shadow-2xl">
             <nav aria-label="Mobile" className="flex flex-col gap-3">
               {links.map((link) => {
                 const active = current === "docs" && link.href === site.docs;
