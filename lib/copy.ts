@@ -17,7 +17,7 @@ export const copy = {
   meta: {
     tagline: "Hosted Hummingbot for Solana strategies.",
     description:
-      "We run Hummingbot on a machine in Amsterdam or Frankfurt that nobody logs into. Your agent stays where it already is. Your capital sits in a Solana vault we cannot drain.",
+      "We run Hummingbot on a machine in Amsterdam or Frankfurt that nobody logs into — including you. Your agent stays where it already is. Your capital sits in a Solana vault we cannot drain.",
   },
   skip: "Skip to content",
   header: {
@@ -39,7 +39,7 @@ export const copy = {
   },
   console: {
     label: "How a book sits on Perch",
-    region: "Perch · Amsterdam",
+    region: "Perch · AMS/FRA",
     status: "Sending",
     agent: {
       kicker: "Agent",
