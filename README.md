@@ -1,8 +1,10 @@
 # Perch
 
-Deploy a Hummingbot strategy. We run the hands. You never log in.
+Hosted Hummingbot for Solana strategies.
 
-Live: [https://perch.poroburu.com](https://perch.poroburu.com). Docs: [https://perch.poroburu.com/docs](https://perch.poroburu.com/docs). Demo tape: [https://perch.poroburu.com/tape](https://perch.poroburu.com/tape). Pages artifact host is `perch-hq/perch-website`. `perch.trade` waits for a real demo.
+Live: [https://perch.poroburu.com](https://perch.poroburu.com). Docs: [https://perch.poroburu.com/docs](https://perch.poroburu.com/docs). Example receipt: [https://perch.poroburu.com/tape](https://perch.poroburu.com/tape). Pages artifact host is `perch-hq/perch-website`. `perch.trade` waits for a real demo.
+
+Customer English is [`lib/copy.ts`](lib/copy.ts). Edit that file, not React components.
 
 ```bash
 npm run dev

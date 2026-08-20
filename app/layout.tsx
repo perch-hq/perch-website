@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { copy } from "@/lib/copy";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -26,10 +27,10 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — ${site.tagline}`,
+    default: `${site.name} — ${copy.meta.tagline}`,
     template: `%s · ${site.name}`,
   },
-  description: site.description,
+  description: copy.meta.description,
   metadataBase: new URL(site.url),
   alternates: { canonical: site.url },
   applicationName: site.name,
@@ -39,14 +40,14 @@ export const metadata: Metadata = {
     "Hummingbot",
     "Condor",
     "hummingbot-api",
-    "sealed Act plane",
+    "hosted Hummingbot",
     "Meteora",
     "Colosseum",
   ],
   authors: [{ name: "Perch" }],
   openGraph: {
     title: site.name,
-    description: site.tagline,
+    description: copy.meta.tagline,
     url: site.url,
     siteName: site.name,
     type: "website",
@@ -56,14 +57,14 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1536,
         height: 1024,
-        alt: site.tagline,
+        alt: copy.meta.tagline,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: site.name,
-    description: site.tagline,
+    description: copy.meta.tagline,
     creator: "@poroburu",
     images: ["/og.png"],
   },
@@ -80,7 +81,7 @@ const jsonLd = {
   applicationCategory: "FinanceApplication",
   operatingSystem: "Web",
   url: site.url,
-  description: site.description,
+  description: copy.meta.description,
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/PreOrder",
@@ -102,7 +103,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <a className="skip-link" href="#main">
-          Skip to content
+          {copy.skip}
         </a>
         {children}
       </body>

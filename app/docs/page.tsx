@@ -6,25 +6,25 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Docs",
   description:
-    "Sealed Act plane: hummingbot-api on the perch, vault PDA as inventory lock. Meteora is the first VaultKind, not the company.",
+    "Builder notes for hosted Hummingbot on Perch: the seat, the vault trust lock, lifecycle verbs, and the receipt stack.",
 };
 
 const facts = [
   {
-    title: "Job",
-    body: "Deploy a Hummingbot strategy without a second server, a pasted Gateway key, or Toronto slot-lag. User one is a person whose own Deposit ticks.",
+    title: "What you are building toward",
+    body: "A person deploys a Hummingbot strategy without a second server, a pasted Gateway key, or Toronto slot-lag. User one is someone whose own deposit is in range.",
   },
   {
-    title: "Act plane",
-    body: "hummingbot-api plus a Gateway-shaped CLMM shim on AMS or FRA. The shim prepends vault.act and sends via Jet. Tenant never gets a login.",
+    title: "The seat",
+    body: "hummingbot-api plus a Gateway-shaped CLMM shim on AMS or FRA. The shim prepends vault.act and sends via Jet. The tenant never gets a login.",
   },
   {
-    title: "Trust lock",
+    title: "The trust lock",
     body: "Inventory sits in a vault PDA because we operate the crank. The PDA cannot Transfer out except the named fee skim. freeze kills act. Anyone with a Deposit withdraws without us.",
   },
   {
-    title: "Wedge",
-    body: "Packaged lp_rebalancer against Meteora DLMM this sprint. Meteora is the first VaultKind — a venue discriminant, not a company lock. Opt-in LP is upside after a tape exists.",
+    title: "This sprint",
+    body: "Packaged lp_rebalancer against Meteora DLMM. Meteora is the first VaultKind — a venue discriminant, not a company lock. Opt-in LP is what a tape can do later, not a second product.",
   },
 ] as const;
 
@@ -35,12 +35,13 @@ export default function DocsHome() {
     <div className="site pb-20 sm:pb-28">
       <p className="eyebrow">Documentation</p>
       <h1 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-        Sealed Act plane. Vault as the lock.
+        Mechanism for the hosted seat.
       </h1>
-      <p className="measure mt-6 text-ink-muted">
-        Point Condor — or another agent — at hummingbot-api on the perch. We
-        rent the seat. We never hold the money. This is not two products, and
-        it is not a yield catalog.
+      <p className="measure mt-6 leading-relaxed text-ink-muted">
+        The landing page is the offer. These pages are how it is true:
+        hummingbot-api on the perch, a vault that holds inventory because we
+        operate the signer, freeze and withdraw on-chain. Meteora is the first
+        venue, not the company.
       </p>
       <div className="mt-12 grid gap-10 sm:grid-cols-2">
         {facts.map((fact, i) => (
@@ -49,7 +50,7 @@ export default function DocsHome() {
               {String(i + 1).padStart(2, "0")}
             </p>
             <h2 className="mt-3 font-serif text-2xl">{fact.title}</h2>
-            <p className="mt-3 text-[0.95rem] text-ink-muted">{fact.body}</p>
+            <p className="mt-3 text-[0.95rem] leading-relaxed text-ink-muted">{fact.body}</p>
           </article>
         ))}
       </div>
@@ -68,7 +69,7 @@ export default function DocsHome() {
           </li>
         ))}
       </ul>
-      <p className="measure mt-16 text-sm text-ink-muted">
+      <p className="measure mt-16 text-sm leading-relaxed text-ink-muted">
         Program and shim internals stay in the{" "}
         <a className="text-ink hover:text-copper" href={site.memo} rel="noreferrer">
           memo

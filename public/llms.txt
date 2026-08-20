@@ -1,12 +1,13 @@
 # Perch
 
-> Deploy a Hummingbot strategy. We run the hands. You never log in.
+> Hosted Hummingbot for Solana strategies.
 
-Point Condor (or another agent) at hummingbot-api on a sealed Act plane. Inventory sits in a vault PDA because Perch operates the crank — that lock is the trust model, not a second product. After a tape exists, the curator can keep a fee from people who opt in. Perch never holds inventory.
+We run Hummingbot on a machine in Amsterdam or Frankfurt that nobody logs into. Your agent stays where it already is. Your capital sits in a Solana vault we cannot drain. You get a white-glove book without standing up operations.
 
 Site: https://perch.poroburu.com
 Docs: https://perch.poroburu.com/docs
-Demo tape: https://perch.poroburu.com/tape
+Example receipt: https://perch.poroburu.com/tape
+Copy: https://github.com/perch-hq/perch-website/blob/main/lib/copy.ts
 Memo: https://github.com/perch-hq/f26-perch/blob/main/PERCH.md
 Architecture: https://github.com/perch-hq/f26-perch/blob/main/ARCH.md
 Strategy: https://github.com/perch-hq/f26-perch/blob/main/STRATEGY.md

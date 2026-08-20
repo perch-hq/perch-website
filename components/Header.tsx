@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { Mark } from "@/components/Mark";
+import { copy } from "@/lib/copy";
 import { site } from "@/lib/site";
 
 const links = [
-  { href: "/#product", label: "Product" },
-  { href: "/#how", label: "How" },
-  { href: site.docs, label: "Docs" },
+  { href: "/#product", label: copy.header.product },
+  { href: "/#how", label: copy.header.how },
+  { href: site.docs, label: copy.header.docs },
 ] as const;
 
 export function Header({ current }: { current?: "docs" | "tape" }) {
@@ -14,7 +15,7 @@ export function Header({ current }: { current?: "docs" | "tape" }) {
       <div className="site flex h-14 items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-2.5 text-sm tracking-wide">
           <Mark className="size-7 text-copper" />
-          Perch
+          {site.name}
         </Link>
         <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
           {links.map((link) => {
@@ -36,12 +37,12 @@ export function Header({ current }: { current?: "docs" | "tape" }) {
             href="/#waitlist"
             className="border border-copper px-3 py-1.5 text-sm text-copper transition-colors hover:bg-copper hover:text-bg"
           >
-            Request a seat
+            {copy.header.cta}
           </Link>
         </nav>
         <details className="relative md:hidden">
-          <summary aria-label="Open menu" className="cursor-pointer text-sm text-ink-muted">
-            Menu
+          <summary aria-label={copy.header.menu} className="cursor-pointer text-sm text-ink-muted">
+            {copy.header.menu}
           </summary>
           <div className="absolute right-0 mt-3 w-48 border border-hairline bg-bg-raised p-3 shadow-xl">
             <nav aria-label="Mobile" className="flex flex-col gap-3">
@@ -61,7 +62,7 @@ export function Header({ current }: { current?: "docs" | "tape" }) {
                 );
               })}
               <Link href="/#waitlist" className="text-sm text-copper">
-                Request a seat
+                {copy.header.cta}
               </Link>
             </nav>
           </div>

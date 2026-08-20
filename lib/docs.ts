@@ -2,7 +2,7 @@ export const docsNav = [
   {
     href: "/docs",
     label: "Overview",
-    title: "Sealed Act plane",
+    title: "The hosted seat",
     summary:
       "hummingbot-api on the perch. Vault PDA as inventory lock. Meteora is the first venue, not the company.",
   },
@@ -37,8 +37,8 @@ export const docsNav = [
   {
     href: "/docs/compare",
     label: "Compare",
-    title: "Not Kamino. Not a VPS.",
+    title: "Compared with a protocol vault and a VPS",
     summary:
-      "Protocol vault is a different job. Helius plus SSH is the same job without freeze or a PDA.",
+      "Deposit-and-forget CLMM is a different job. Helius plus SSH is this job without freeze or a PDA.",
   },
 ] as const;

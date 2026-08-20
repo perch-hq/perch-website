@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Console } from "@/components/Console";
+import { copy } from "@/lib/copy";
 import { site } from "@/lib/site";
 
 export function Hero() {
@@ -6,42 +8,38 @@ export function Hero() {
     <section className="relative overflow-hidden">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 -top-32 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(196,122,74,0.18),transparent_68%)]"
+        className="pointer-events-none absolute -right-24 -top-32 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(196,122,74,0.16),transparent_68%)]"
       />
-      <div className="site py-16 sm:py-24 lg:py-28">
-        <p className="eyebrow">Colosseum Fall 2026</p>
-        <h1 className="mt-6 max-w-4xl font-serif text-[2.45rem] leading-[1.12] tracking-tight sm:text-6xl sm:leading-[1.08] lg:text-[4rem]">
-          Deploy a Hummingbot strategy.
-          <br />
-          We run the hands. You never{" "}
-          <em className="italic text-copper">log in.</em>
-        </h1>
-        <p className="measure mt-8 text-lg text-ink-muted">
-          Condor — or another agent — keeps thinking where it is. hummingbot-api
-          sends from Amsterdam or Frankfurt. You do not paste a Gateway key.
-        </p>
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <Link
-            href="/#waitlist"
-            className="inline-block border border-copper bg-copper px-4 py-2.5 text-sm text-bg transition-colors hover:bg-transparent hover:text-copper"
-          >
-            Request a seat
-          </Link>
-          <Link
-            href={site.docs}
-            className="inline-block text-sm text-ink-muted transition-colors hover:text-ink"
-          >
-            Read the docs
-          </Link>
+      <div className="site grid items-center gap-14 py-16 sm:py-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16 lg:py-28">
+        <div>
+          <h1 className="max-w-xl font-serif text-[2.35rem] leading-[1.12] tracking-tight sm:text-5xl sm:leading-[1.08] lg:text-[3.35rem]">
+            {copy.hero.h1}
+          </h1>
+          <p className="mt-8 max-w-lg text-lg leading-relaxed text-ink-muted">
+            {copy.hero.lede}
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Link
+              href="/#waitlist"
+              className="inline-block border border-copper bg-copper px-4 py-2.5 text-sm text-bg transition-colors hover:bg-transparent hover:text-copper"
+            >
+              {copy.hero.cta}
+            </Link>
+            <Link
+              href="/#how"
+              className="inline-block text-sm text-ink-muted transition-colors hover:text-ink"
+            >
+              {copy.hero.secondary}
+            </Link>
+          </div>
+          <p className="mt-10 max-w-lg text-sm leading-relaxed text-ink-muted">
+            {copy.hero.after.text}{" "}
+            <Link href={site.tape} className="text-ink hover:text-copper">
+              {copy.hero.after.link}
+            </Link>
+          </p>
         </div>
-        <p className="measure mt-10 text-sm text-ink-muted">
-          After your own book ticks, people can opt in. You keep the fee. They
-          leave without you. That is{" "}
-          <Link href={site.tape} className="text-ink hover:text-copper">
-            what a tape looks like
-          </Link>
-          — not a second product.
-        </p>
+        <Console />
       </div>
     </section>
   );
