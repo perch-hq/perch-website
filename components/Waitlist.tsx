@@ -2,6 +2,7 @@
 
 import { FormEvent, Suspense, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
+import { Reveal } from "@/components/Reveal";
 import { copy, type WaitlistRole } from "@/lib/copy";
 import { site } from "@/lib/site";
 
@@ -50,7 +51,8 @@ function WaitlistForm() {
             {copy.waitlist.lede}
           </p>
         </div>
-        <form onSubmit={onSubmit} className="stage p-6 sm:p-8">
+        <Reveal>
+          <form onSubmit={onSubmit} className="stage p-6 sm:p-8">
           <div className="grid gap-5">
             <label className="grid gap-2 text-sm">
               {copy.waitlist.fields.email}
@@ -92,7 +94,8 @@ function WaitlistForm() {
               {copy.waitlist.submit}
             </button>
           </div>
-        </form>
+          </form>
+        </Reveal>
       </div>
     </section>
   );

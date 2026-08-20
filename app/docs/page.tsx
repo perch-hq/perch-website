@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { docsNav } from "@/lib/docs";
+import { docsFacts, docsNav } from "@/lib/docs";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -8,25 +8,6 @@ export const metadata: Metadata = {
   description:
     "Builder notes for hosted Hummingbot on Perch: the seat, the vault trust lock, lifecycle verbs, and the receipt stack.",
 };
-
-const facts = [
-  {
-    title: "What you are building toward",
-    body: "A person deploys a Hummingbot strategy without a second server, a pasted Gateway key, or Toronto slot-lag. User one is someone whose own deposit is in range.",
-  },
-  {
-    title: "The seat",
-    body: "hummingbot-api plus a Gateway-shaped CLMM shim on AMS or FRA. The shim prepends vault.act and sends via Jet. The tenant never gets a login.",
-  },
-  {
-    title: "The trust lock",
-    body: "Inventory sits in a vault PDA because we operate the crank. The PDA cannot Transfer out except the named fee skim. freeze kills act. Anyone with a Deposit withdraws without us.",
-  },
-  {
-    title: "This sprint",
-    body: "Packaged lp_rebalancer against Meteora DLMM. Meteora is the first VaultKind — a venue discriminant, not a company lock. Opt-in LP is what a tape can do later, not a second product.",
-  },
-] as const;
 
 export default function DocsHome() {
   const pages = docsNav.filter((item) => item.href !== "/docs");
@@ -44,7 +25,7 @@ export default function DocsHome() {
         venue, not the company.
       </p>
       <div className="mt-12 grid gap-10 sm:grid-cols-2">
-        {facts.map((fact, i) => (
+        {docsFacts.map((fact, i) => (
           <article key={fact.title} className="border-t border-hairline pt-6">
             <p className="font-mono text-xs tracking-widest text-copper">
               {String(i + 1).padStart(2, "0")}

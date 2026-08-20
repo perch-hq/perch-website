@@ -1,15 +1,41 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { copy } from "@/lib/copy";
 
+// "Confirmed" is a UI state token (the other half of the illustrative
+// send → confirm cycle), not marketing copy, so it lives here rather than
+// in lib/copy.ts. The idle state comes from copy.console.status.
+const CONFIRMED = "Confirmed";
+const CYCLE_MS = 5200;
+
 export function Console() {
+  const [confirmed, setConfirmed] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = window.setInterval(() => {
+      setConfirmed((value) => !value);
+    }, CYCLE_MS);
+    return () => window.clearInterval(id);
+  }, []);
+
   return (
-    <aside aria-label={copy.console.label} className="stage overflow-hidden">
+    <aside
+      aria-label={copy.console.label}
+      className="stage console-enter overflow-hidden"
+    >
       <div className="flex items-center justify-between border-b border-hairline px-4 py-3">
         <p className="font-mono text-[0.7rem] tracking-[0.14em] text-ink-muted uppercase">
           {copy.console.region}
         </p>
         <p className="flex items-center gap-2 font-mono text-[0.7rem] tracking-wide text-copper">
-          <span className="size-1.5 rounded-full bg-copper" />
-          {copy.console.status}
+          <span
+            aria-hidden="true"
+            className="status-dot size-1.5 rounded-full bg-copper"
+            data-state={confirmed ? "confirmed" : "sending"}
+          />
+          {confirmed ? CONFIRMED : copy.console.status}
         </p>
       </div>
 
