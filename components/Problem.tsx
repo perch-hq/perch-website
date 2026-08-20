@@ -1,18 +1,18 @@
 const problems = [
   {
     k: "01",
-    title: "Small vaults get abandoned",
-    body: "Deposit into someone else’s vault and you are relying on their business case. Once it is too small to be worth running, the people running it move on.",
+    title: "Two servers and a pasted key",
+    body: "Condor already split the brain from the hands. Self-hosting still means Tailscale, a Gateway key in .env, and hoping the second box stays up.",
   },
   {
     k: "02",
-    title: "Friends’ money starts to look like a fund",
-    body: "Let a few people you know in and suddenly you are expected to have paperwork, lockups and a raise. All you wanted was a fee for the strategy you already run.",
+    title: "Wifi misses the slot",
+    body: "A Toronto laptop versus Amsterdam or Frankfurt is last-mile landing, not Jump versus Auros. Miner is gone, so that ops is not paid by rewards.",
   },
   {
     k: "03",
-    title: "Doing it yourself means holding the keys",
-    body: "Rent a server, paste in a private key, and every risk that follows is yours. Anyone with the login has the keys, and your friends are trusting a promise.",
+    title: "If we hold the crank, the money cannot",
+    body: "A locked-down VPS with a pasted owner key is custodial. Freeze that traps funds is the same miss. Inventory has to sit in a vault you can leave without us.",
   },
 ] as const;
 
@@ -21,8 +21,7 @@ export function Problem() {
     <section className="site pb-20 sm:pb-28">
       <p className="eyebrow">The problem</p>
       <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
-        Right now you either hand the vault to a protocol or hold the keys
-        yourself.
+        The painful part is already ops, not yield.
       </h2>
       <div className="mt-12 grid gap-px bg-hairline sm:grid-cols-3">
         {problems.map((item) => (

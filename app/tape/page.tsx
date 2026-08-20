@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Tape } from "@/components/Tape";
+import { copy } from "@/lib/copy";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Demo tape",
-  description:
-    "A named curator’s vault: ticks, fee skim, landing, freeze, and leave. Not a yield catalog.",
+  title: copy.tape.title,
+  description: copy.tape.description,
   alternates: { canonical: `${site.url}${site.tape}` },
 };
 

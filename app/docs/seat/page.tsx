@@ -4,7 +4,7 @@ import { SplitPlane, VaultCustody } from "@/components/Diagrams";
 export const metadata: Metadata = {
   title: "The seat",
   description:
-    "Condor can live anywhere. hummingbot-api sends from the perch. The vault holds the money; the seat only trades it.",
+    "Cheap plane anywhere. Act plane cannot: hummingbot-api, shim crank, and Jet on AMS or FRA. Vault PDA holds inventory.",
 };
 
 export default function SeatDoc() {

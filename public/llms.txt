@@ -1,25 +1,26 @@
 # Perch
 
-> Deploy a Hummingbot strategy. Or join a vault that already ticks.
+> Hosted Hummingbot for Solana strategies.
 
-Perch lets a person open a (private) vault on Solana, take a fee from people who opt in, and lets those people leave if the curator stops. Condor stays on the cheap plane. hummingbot-api sits on a sealed seat. Perch never holds inventory.
+We run Hummingbot on a machine in Amsterdam or Frankfurt that nobody logs into. Your agent stays where it already is. Your capital sits in a Solana vault we cannot drain. You get a white-glove book without standing up operations.
 
 Site: https://perch.poroburu.com
 Docs: https://perch.poroburu.com/docs
-Demo tape: https://perch.poroburu.com/tape
+Example receipt: https://perch.poroburu.com/tape
+Copy: https://github.com/perch-hq/perch-website/blob/main/lib/copy.ts
 Memo: https://github.com/perch-hq/f26-perch/blob/main/PERCH.md
 Architecture: https://github.com/perch-hq/f26-perch/blob/main/ARCH.md
 Strategy: https://github.com/perch-hq/f26-perch/blob/main/STRATEGY.md
 
 ## Product
 
-- Two doors: deploy Condor / hummingbot-api, or join a named curator’s tape.
-- Curator opens a vault, sets an immutable fee, optional private allowlist.
-- Curator's own capital ticks first so a tape exists. LPs opt in after that.
-- Claimed venue fees skim to the curator. Perch takes seat rent, not LP yield.
-- First venue is Meteora DLMM. Meteora is an adapter, not the company.
+- One job: deploy a Hummingbot strategy without sysadmin or Toronto slot-lag.
+- Vault PDA is the trust lock (cannot Transfer out except the named fee skim). freeze kills act. Anyone with a Deposit withdraws without us.
+- Curator's own Deposit ticks first. Opt-in LP / fee-from-friends is upside after a tape, not a peer SKU.
+- Seat rent covers colo. When a vault performs, Perch may share claimed venue fees (named on-chain) and waive rent.
+- First venue is Meteora DLMM — a VaultKind adapter, not the company.
 - Sealed seat in Amsterdam or Frankfurt. Tenant never gets a login.
-- Freeze stops the next tick on-chain. Each LP withdraws without the curator.
+- Packaged lp_rebalancer this sprint. No arbitrary .py on the Act box.
 
 ## Not this
 

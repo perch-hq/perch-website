@@ -2,31 +2,43 @@ export const docsNav = [
   {
     href: "/docs",
     label: "Overview",
-    title: "What Perch is",
-    summary: "Two doors, one vault. Condor on your machine. hummingbot-api on the seat.",
+    title: "The hosted seat",
+    summary:
+      "hummingbot-api on the perch. Vault PDA as inventory lock. Meteora is the first venue, not the company.",
   },
   {
     href: "/docs/how-it-works",
-    label: "How it works",
-    title: "Open, fund, invite, trade, freeze, leave",
-    summary: "From the first deposit to anyone walking away.",
+    label: "Lifecycle",
+    title: "open_lease to withdraw",
+    summary:
+      "Lease, vault, packaged lp_rebalancer, live-updatable fields, freeze, withdraw.",
+  },
+  {
+    href: "/docs/api",
+    label: "API",
+    title: "Cheap-plane API and MCP",
+    summary:
+      "Curator wallet signs vault ixs. Crank never in context. Packaged controller only.",
   },
   {
     href: "/docs/trust",
     label: "Trust",
-    title: "Money, stopping, leaving",
-    summary: "No login. The vault holds the money. Anyone can withdraw.",
+    title: "Inventory, halt, bond",
+    summary:
+      "Vault PDA plus Deposit. freeze kills act. Honest ticks are a receipt stack, not TEE.",
   },
   {
     href: "/docs/seat",
     label: "The seat",
-    title: "Think anywhere. Trades cannot.",
-    summary: "Condor stays cheap. hummingbot-api on the perch is what sends.",
+    title: "Cheap plane vs Act plane",
+    summary:
+      "Condor anywhere. hummingbot-api, shim crank, and Jet on AMS or FRA.",
   },
   {
     href: "/docs/compare",
     label: "Compare",
-    title: "Protocol vault vs rented server vs Perch",
-    summary: "Whose vault it is, who can join, and who can leave.",
+    title: "Compared with a protocol vault and a VPS",
+    summary:
+      "Deposit-and-forget CLMM is a different job. Helius plus SSH is this job without freeze or a PDA.",
   },
 ] as const;

@@ -5,14 +5,14 @@ import { Problem } from "@/components/Problem";
 export const metadata: Metadata = {
   title: "Compare",
   description:
-    "Protocol vaults, a rented server, and Perch: whose vault it is, who can join, and who can leave.",
+    "Protocol vaults are a different job. Helius plus a VPS plus SSH is this job without freeze, a vault PDA, or no-shell.",
 };
 
 export default function CompareDoc() {
   return (
     <>
       <h1 className="sr-only">
-        Compare Perch with a protocol vault and a rented server
+        Compare Perch with a protocol vault and Helius plus a VPS
       </h1>
       <Problem />
       <Compare />
