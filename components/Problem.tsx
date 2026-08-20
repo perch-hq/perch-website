@@ -23,7 +23,7 @@ export function Problem() {
       <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-snug tracking-tight sm:text-4xl">
         The painful part is already ops, not yield.
       </h2>
-      <div className="mt-12 grid gap-px bg-hairline sm:grid-cols-3">
+      <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-hairline bg-hairline sm:grid-cols-3">
         {problems.map((item) => (
           <article key={item.k} className="bg-bg p-6 sm:p-8">
             <p className="font-mono text-xs tracking-widest text-copper">

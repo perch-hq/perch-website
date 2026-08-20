@@ -10,11 +10,16 @@ export function Product() {
           {copy.product.h2}
         </h2>
       </div>
-      <div className="mt-14 grid gap-12 lg:grid-cols-3 lg:gap-10">
+      <div className="mt-14 grid gap-5 lg:grid-cols-3">
         {copy.product.items.map((item, i) => (
           <Reveal key={item.title} delay={i * 90}>
-            <article className="max-w-md">
-              <h3 className="font-serif text-2xl leading-snug">{item.title}</h3>
+            <article className="card h-full p-6 sm:p-7">
+              <p className="font-mono text-[0.7rem] tracking-[0.16em] text-copper">
+                {String(i + 1).padStart(2, "0")}
+              </p>
+              <h3 className="mt-5 font-serif text-2xl leading-snug">
+                {item.title}
+              </h3>
               <p className="mt-4 text-[0.95rem] leading-relaxed text-ink-muted">
                 {item.body}
               </p>

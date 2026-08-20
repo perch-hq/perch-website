@@ -39,29 +39,25 @@ export function Tape() {
         {copy.tape.title}
       </h1>
       <p className="measure mt-6 text-ink-muted">{copy.tape.fixture}</p>
-      <table className="proof-table mt-12">
-        <caption className="sr-only">{copy.tape.caption}</caption>
-        <tbody>
-          {rows.map((row) => (
-            <tr key={row.label}>
-              <td>{row.label}</td>
-              <td>{row.value}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="stage mt-12 overflow-hidden px-6 sm:px-8">
+        <table className="proof-table">
+          <caption className="sr-only">{copy.tape.caption}</caption>
+          <tbody>
+            {rows.map((row) => (
+              <tr key={row.label}>
+                <td>{row.label}</td>
+                <td>{row.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <p className="measure mt-8 text-sm text-ink-muted">{copy.tape.note}</p>
       <div className="mt-10 flex flex-wrap gap-3">
-        <Link
-          href="/#waitlist"
-          className="border border-copper bg-copper px-4 py-2.5 text-sm text-bg transition-colors hover:bg-transparent hover:text-copper"
-        >
+        <Link href="/#waitlist" className="btn btn-primary">
           {copy.tape.access}
         </Link>
-        <Link
-          href={site.docs}
-          className="border border-hairline px-4 py-2.5 text-sm text-ink-muted transition-colors hover:border-ink hover:text-ink"
-        >
+        <Link href={site.docs} className="btn btn-ghost">
           {copy.tape.docs}
         </Link>
       </div>

@@ -61,7 +61,7 @@ function WaitlistForm() {
                 type="email"
                 name="email"
                 autoComplete="email"
-                className="border border-hairline bg-bg px-3 py-2 text-ink"
+                className="field"
               />
             </label>
             <label className="grid gap-2 text-sm">
@@ -69,7 +69,7 @@ function WaitlistForm() {
               <select
                 name="role"
                 defaultValue={defaultRole}
-                className="border border-hairline bg-bg px-3 py-2 text-ink"
+                className="field"
               >
                 {copy.waitlist.roles.map((role) => (
                   <option key={role.value} value={role.value}>
@@ -84,14 +84,12 @@ function WaitlistForm() {
                 name="running"
                 rows={3}
                 placeholder={copy.waitlist.fields.runningPlaceholder}
-                className="border border-hairline bg-bg px-3 py-2 text-ink placeholder:text-ink-muted"
+                className="field placeholder:text-ink-muted"
               />
             </label>
-            <button
-              type="submit"
-              className="border border-copper bg-copper px-4 py-2.5 text-sm text-bg transition-colors hover:bg-transparent hover:text-copper"
-            >
+            <button type="submit" className="btn btn-primary w-full sm:w-fit">
               {copy.waitlist.submit}
+              <span aria-hidden="true">→</span>
             </button>
           </div>
           </form>
